@@ -1,0 +1,540 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#111211">
+<meta name="description" content="BLACK LABEL — Barber shop. Stile, precisione e carattere.">
+<title>BLACK LABEL — Barber Shop</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --nero:#111211;
+  --antracite:#202220;
+  --antracite2:#292b29;
+  --bianco:#eae5da;
+  --rame:#b47752;
+  --grigio:#a6a49d;
+  --linea:rgba(234,229,218,.16);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--nero);color:var(--bianco);font-family:'DM Sans',sans-serif}
+a{text-decoration:none;color:inherit}
+button,input,textarea{font:inherit}
+img{display:block;width:100%;object-fit:cover}
+.container{width:min(1160px,88%);margin:auto}
+.eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--rame)}
+.serif{font-family:'Oswald',sans-serif;font-weight:400;text-transform:uppercase}
+.section{padding:115px 0}
+.section-title{font-family:'Oswald',sans-serif;font-size:clamp(44px,6vw,76px);font-weight:400;text-transform:uppercase;line-height:1.02;margin:20px 0 25px}
+.section-copy{font-size:14px;line-height:1.95;color:var(--grigio);max-width:520px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 27px;background:var(--rame);color:#fff;font-size:10px;letter-spacing:2px;text-transform:uppercase;border:1px solid var(--rame);transition:.3s;cursor:pointer}
+.btn:hover{background:transparent;color:var(--rame)}
+.btn-outline{background:transparent;color:var(--bianco);border-color:rgba(234,229,218,.5)}
+.btn-outline:hover{background:var(--bianco);color:var(--nero)}
+header{position:absolute;z-index:20;top:0;left:0;width:100%;padding:25px 6%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.13)}
+.logo{font-family:'Oswald',sans-serif;font-size:29px;letter-spacing:4px;line-height:1}
+.logo span{color:var(--rame)}
+.logo small{display:block;font-family:'DM Sans',sans-serif;font-size:8px;letter-spacing:5px;margin-top:6px;color:#aaa}
+nav{display:flex;align-items:center;gap:30px}
+nav a{font-size:9px;letter-spacing:1.7px;text-transform:uppercase;color:#eae5da;transition:.2s}
+nav a:hover{color:var(--rame)}
+.nav-cta{border:1px solid var(--rame);padding:12px 18px}
+.hero{height:100vh;min-height:680px;position:relative;display:flex;align-items:center;background:linear-gradient(90deg,rgba(9,10,9,.91) 0%,rgba(9,10,9,.58) 48%,rgba(9,10,9,.12) 100%),url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=2200&q=90') center/cover}
+.hero-content{width:min(1160px,88%);margin:auto;padding-top:65px}
+.hero h1{font-family:'Oswald',sans-serif;font-size:clamp(75px,13vw,165px);font-weight:500;text-transform:uppercase;line-height:.86;letter-spacing:-3px;margin:28px 0}
+.hero h1 span{color:var(--rame);display:block}
+.hero p{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#d2cec5;margin-bottom:38px}
+.hero-bottom{position:absolute;bottom:35px;left:6%;right:6%;display:flex;justify-content:space-between;color:#bbb;font-size:9px;letter-spacing:2px;text-transform:uppercase}
+.hero-line{width:50px;height:1px;background:var(--rame);margin-bottom:25px}
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:95px;align-items:center}
+.intro-image{height:590px;position:relative}
+.intro-image img{height:100%;filter:grayscale(100%)}
+.intro-image:after{content:"";position:absolute;inset:15px -15px -15px 15px;border:1px solid var(--rame);z-index:-1}
+.intro-text .section-title{max-width:480px}
+.intro-text .section-copy{margin:25px 0 32px}
+.intro-mark{font-family:'Oswald',sans-serif;font-size:100px;color:rgba(180,119,82,.18);line-height:1;margin-top:30px}
+.dark-band{background:var(--antracite);padding:85px 0}
+.dark-band-inner{display:grid;grid-template-columns:repeat(3,1fr);gap:35px;text-align:center}
+.dark-stat{border-right:1px solid var(--linea)}
+.dark-stat:last-child{border:0}
+.dark-stat strong{display:block;font-family:'Oswald',sans-serif;font-size:44px;font-weight:400;color:var(--rame)}
+.dark-stat span{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#aaa}
+.services{background:#eae5da;color:var(--nero)}
+.services .eyebrow{color:#986344}
+.services-heading{text-align:center;margin-bottom:60px}
+.services-heading .section-title{color:var(--nero)}
+.services-heading .section-copy{margin:auto;color:#6d6b65}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.service-card{border:1px solid #c9c1b5;padding:35px 28px;position:relative;transition:.3s;min-height:320px;display:flex;flex-direction:column}
+.service-card:hover{background:var(--nero);color:var(--bianco);transform:translateY(-6px)}
+.service-number{font-family:'Oswald',sans-serif;color:var(--rame);font-size:14px;letter-spacing:2px}
+.service-card h3{font-family:'Oswald',sans-serif;font-weight:400;font-size:30px;text-transform:uppercase;margin:35px 0 12px}
+.service-card p{font-size:12px;line-height:1.8;color:#777;flex:1}
+.service-card:hover p{color:#aaa}
+.service-price{font-family:'Oswald',sans-serif;font-size:35px;margin-top:25px}
+.service-price small{font-family:'DM Sans',sans-serif;font-size:10px;color:#888;letter-spacing:1px}
+.service-card .service-select{margin-top:20px;border:0;border-bottom:1px solid var(--rame);background:none;color:inherit;text-align:left;padding:10px 0;font-size:9px;letter-spacing:2px;text-transform:uppercase;cursor:pointer}
+.manifesto{display:grid;grid-template-columns:1fr 1fr;min-height:600px}
+.manifesto-image{min-height:600px}
+.manifesto-image img{height:100%;filter:grayscale(100%)}
+.manifesto-text{background:var(--antracite);padding:90px 11%;display:flex;flex-direction:column;justify-content:center}
+.manifesto-text .section-title{font-size:clamp(45px,5vw,67px)}
+.manifesto-text .section-copy{margin:15px 0 30px}
+.manifesto-signature{font-family:'Oswald',sans-serif;text-transform:uppercase;color:var(--rame);letter-spacing:3px;font-size:11px;margin-top:20px}
+.gallery-section{background:#181a18}
+.gallery-heading{text-align:center;margin-bottom:50px}
+.gallery-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;grid-template-rows:250px 220px;gap:12px}
+.gallery-grid img{height:100%;filter:grayscale(100%);transition:.5s}
+.gallery-grid img:hover{filter:grayscale(0)}
+.gallery-grid img:first-child{grid-row:span 2}
+.gallery-grid img:last-child{grid-column:2/4}
+.booking-section{background:#111211;padding:115px 6%}
+.booking-layout{max-width:1200px;margin:auto;display:grid;grid-template-columns:.85fr 1.15fr;gap:85px;align-items:center}
+.booking-intro h2{font-family:'Oswald',sans-serif;font-size:clamp(55px,6vw,82px);font-weight:400;text-transform:uppercase;line-height:1;margin:27px 0}
+.booking-intro h2 span{color:var(--rame)}
+.booking-intro p{font-size:14px;line-height:1.9;color:var(--grigio);max-width:390px}
+.booking-detail{border-top:1px solid var(--linea);margin-top:45px;padding-top:20px;font-size:10px;letter-spacing:2px;line-height:2;color:#999}
+.booking-card{background:#eae5da;color:#202220;padding:clamp(25px,4vw,45px)}
+.booking-top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #c9c1b5;padding-bottom:20px;margin-bottom:28px}
+.booking-top span{font-size:9px;letter-spacing:2px;text-transform:uppercase}
+.booking-step{color:#a16b49}
+.booking-card h3{font-family:'Oswald',sans-serif;font-size:32px;font-weight:400;text-transform:uppercase;margin-bottom:8px}
+.booking-subtitle{font-size:12px;color:#77736c;line-height:1.7;margin-bottom:24px}
+.booking-label{display:block;font-size:9px;letter-spacing:1.8px;text-transform:uppercase;margin:22px 0 10px;color:#555}
+.booking-input{width:100%;min-height:47px;border:1px solid #c9c1b5;background:transparent;padding:12px;color:#202220;font-size:12px;outline:none;border-radius:0}
+.booking-input:focus{border-color:#a16b49}
+.booking-services{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.booking-service{border:1px solid #c9c1b5;background:transparent;padding:13px 5px;color:#333;font-size:10px;cursor:pointer;transition:.2s}
+.booking-service strong{display:block;font-size:16px;font-weight:500;margin-top:5px}
+.booking-service.active,.booking-service:hover{background:#202220;color:#eae5da;border-color:#202220}
+.booking-times{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.booking-time{border:1px solid #c9c1b5;background:transparent;color:#202220;min-height:40px;font-size:11px;cursor:pointer}
+.booking-time.active,.booking-time:hover{background:#202220;color:#eae5da;border-color:#202220}
+.booking-next{width:100%;margin-top:28px;background:#202220;color:#eae5da;border:1px solid #202220;padding:17px;font-size:9px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:.3s}
+.booking-next:hover{background:transparent;color:#202220}
+.booking-back{border:0;background:transparent;color:#777;text-decoration:underline;cursor:pointer;font-size:11px;margin-top:17px}
+.booking-hidden{display:none!important}
+.booking-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.booking-fields .full{grid-column:1/-1}
+.booking-success{text-align:center;padding:35px 5px}
+.booking-success .symbol{font-family:'Oswald',sans-serif;font-size:65px;color:var(--rame)}
+.booking-success p{font-size:13px;line-height:1.8;color:#777;margin-top:15px}
+.booking-disclaimer{font-size:9px;color:#89857d;line-height:1.7;text-align:center;margin-top:18px}
+.contact-strip{background:var(--rame);color:white;padding:55px 6%}
+.contact-strip-inner{max-width:1160px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:25px}
+.contact-strip h2{font-family:'Oswald',sans-serif;font-size:clamp(30px,4vw,48px);font-weight:400;text-transform:uppercase}
+.contact-strip p{font-size:11px;letter-spacing:1px;margin-top:8px}
+.contact-strip .btn{background:var(--nero);border-color:var(--nero)}
+.contact-strip .btn:hover{background:transparent;color:white}
+footer{background:#0b0c0b;padding:75px 6% 28px}
+.footer-main{max-width:1160px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:50px;padding-bottom:55px}
+.footer-logo{font-family:'Oswald',sans-serif;font-size:37px;letter-spacing:4px}
+.footer-logo span{color:var(--rame)}
+.footer-brand p{font-size:12px;color:#999;line-height:1.9;max-width:290px;margin-top:18px}
+.footer-col h4{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--rame);margin-bottom:20px}
+.footer-col p,.footer-col a{display:block;font-size:11px;color:#aaa;line-height:2.4}
+.footer-col a:hover{color:var(--rame)}
+.footer-bottom{max-width:1160px;margin:auto;border-top:1px solid var(--linea);padding-top:23px;display:flex;justify-content:space-between;gap:15px;font-size:9px;letter-spacing:1px;color:#777}
+@media(max-width:850px){
+ nav{gap:15px}
+ nav a{font-size:8px}
+ .intro{gap:50px}
+ .booking-layout{grid-template-columns:1fr;gap:50px}
+ .manifesto{grid-template-columns:1fr}
+ .manifesto-image{min-height:430px;height:430px}
+ .manifesto-text{padding:70px 8%}
+ .gallery-grid{grid-template-rows:210px 190px}
+}
+@media(max-width:600px){
+ header{padding:19px 5%}
+ .logo{font-size:23px}
+ nav{gap:10px}
+ nav a{font-size:7px;letter-spacing:.6px}
+ nav a:nth-child(2),nav a:nth-child(3){display:none}
+ .nav-cta{padding:10px}
+ .hero{min-height:650px;background-position:60% center}
+ .hero h1{font-size:76px;letter-spacing:-1px}
+ .hero p{font-size:10px;line-height:1.8}
+ .hero-bottom{font-size:7px;letter-spacing:1px}
+ .section{padding:78px 0}
+ .intro{grid-template-columns:1fr;gap:45px}
+ .intro-image{height:350px}
+ .intro-image:after{inset:10px -10px -10px 10px}
+ .intro-mark{font-size:75px}
+ .dark-band{padding:55px 0}
+ .dark-band-inner{gap:12px}
+ .dark-stat strong{font-size:32px}
+ .dark-stat span{font-size:7px;letter-spacing:1px}
+ .service-grid{grid-template-columns:1fr}
+ .service-card{min-height:260px}
+ .manifesto-image{height:330px;min-height:330px}
+ .manifesto-text{padding:65px 7%}
+ .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:190px 160px 160px}
+ .gallery-grid img:first-child{grid-row:auto}
+ .gallery-grid img:last-child{grid-column:auto}
+ .booking-section{padding:80px 5%}
+ .booking-card{padding:24px 18px}
+ .booking-services{grid-template-columns:1fr}
+ .booking-services button{display:flex;justify-content:space-between;align-items:center;padding:12px}
+ .booking-services strong{margin:0}
+ .booking-times{grid-template-columns:repeat(3,1fr)}
+ .booking-fields{grid-template-columns:1fr}
+ .booking-fields .full{grid-column:auto}
+ .contact-strip-inner{flex-direction:column;align-items:flex-start}
+ .footer-main{grid-template-columns:1fr;gap:35px}
+ .footer-bottom{flex-direction:column}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a class="logo" href="#inizio">BLACK <span>LABEL</span><small>BARBER SHOP</small></a>
+  <nav>
+    <a href="#filosofia">Il concept</a>
+    <a href="#servizi">Servizi</a>
+    <a href="#galleria">Galleria</a>
+    <a href="#prenota" class="nav-cta">Prenota</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="inizio">
+  <div class="hero-content">
+    <div class="hero-line"></div>
+    <span class="eyebrow">Barber shop · Stile senza compromessi</span>
+    <h1>Own your<br><span>style.</span></h1>
+    <p>Precisione. Carattere. Identità.</p>
+    <a href="#servizi" class="btn">Scopri i servizi</a>
+  </div>
+  <div class="hero-bottom">
+    <span>BLACK LABEL · BARBER SHOP</span>
+    <span>Il tuo stile, la tua firma.</span>
+  </div>
+</section>
+
+<section class="section" id="filosofia">
+  <div class="container intro">
+    <div class="intro-image">
+      <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1100&q=85" alt="Barbiere al lavoro durante un taglio">
+    </div>
+    <div class="intro-text">
+      <span class="eyebrow">Oltre il semplice taglio</span>
+      <h2 class="section-title">Lo stile è una questione di carattere.</h2>
+      <p class="section-copy">BLACK LABEL nasce da un'idea precisa: trasformare la cura personale in un'esperienza. Ogni dettaglio conta, ogni gesto ha uno scopo, ogni stile racconta qualcosa di chi lo indossa.</p>
+      <p class="section-copy" style="margin-top:18px">Non seguiamo semplicemente le tendenze. Lavoriamo per trovare il taglio che valorizza la tua identità, con attenzione, tecnica e personalità.</p>
+      <div class="intro-mark">B/L</div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-band">
+  <div class="container dark-band-inner">
+    <div class="dark-stat"><strong>01</strong><span>Attenzione al dettaglio</span></div>
+    <div class="dark-stat"><strong>100%</strong><span>Cura e precisione</span></div>
+    <div class="dark-stat"><strong>B/L</strong><span>Il tuo stile, la tua firma</span></div>
+  </div>
+</section>
+
+<section class="section services" id="servizi">
+  <div class="container">
+    <div class="services-heading">
+      <span class="eyebrow">La nostra selezione</span>
+      <h2 class="section-title">Il servizio giusto per te.</h2>
+      <p class="section-copy">Tecnica, precisione e cura personale. Scegli il servizio e prenditi il tuo momento.</p>
+    </div>
+    <div class="service-grid">
+      <article class="service-card">
+        <span class="service-number">01 / TAGLIO</span>
+        <h3>Il taglio</h3>
+        <p>Un taglio studiato sulle tue caratteristiche, rifinito con precisione e attenzione alle proporzioni.</p>
+        <div class="service-price">25 € <small>/ servizio</small></div>
+        <button class="service-select" data-service="Taglio">Scegli questo servizio ↗</button>
+      </article>
+      <article class="service-card">
+        <span class="service-number">02 / ESPERIENZA COMPLETA</span>
+        <h3>Taglio + barba</h3>
+        <p>Un'esperienza completa dedicata alla cura del tuo stile, dal taglio alla definizione della barba.</p>
+        <div class="service-price">35 € <small>/ servizio</small></div>
+        <button class="service-select" data-service="Taglio e barba">Scegli questo servizio ↗</button>
+      </article>
+      <article class="service-card">
+        <span class="service-number">03 / BARBA</span>
+        <h3>La barba</h3>
+        <p>Definizione, rifinitura e cura dei dettagli per valorizzare il tuo viso e il tuo stile.</p>
+        <div class="service-price">18 € <small>/ servizio</small></div>
+        <button class="service-select" data-service="Barba">Scegli questo servizio ↗</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="manifesto">
+  <div class="manifesto-image">
+    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1200&q=85" alt="Ambiente e strumenti da barber shop">
+  </div>
+  <div class="manifesto-text">
+    <span class="eyebrow">La filosofia BLACK LABEL</span>
+    <h2 class="section-title">Non è solo come appari. È come ti senti.</h2>
+    <p class="section-copy">Un ambiente curato, un servizio attento e il tempo necessario per fare le cose nel modo giusto. Crediamo che ogni cliente meriti un'esperienza costruita intorno a lui.</p>
+    <p class="section-copy">Perché lo stile migliore non è quello che imiti. È quello che ti rappresenta.</p>
+    <span class="manifesto-signature">BLACK LABEL · BARBER SHOP</span>
+  </div>
+</section>
+
+<section class="section gallery-section" id="galleria">
+  <div class="container">
+    <div class="gallery-heading">
+      <span class="eyebrow">L'universo BLACK LABEL</span>
+      <h2 class="section-title">Lo stile, nei dettagli.</h2>
+      <p class="section-copy" style="margin:auto">Un mondo fatto di tecnica, ricerca e personalità.</p>
+    </div>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1100&q=85" alt="Interno di barber shop">
+      <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=900&q=85" alt="Tecnica di taglio">
+      <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=900&q=85" alt="Strumenti da barbiere">
+      <img src="https://images.unsplash.com/photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=1100&q=85" alt="Dettaglio di un taglio">
+    </div>
+  </div>
+</section>
+
+<section class="booking-section" id="prenota">
+  <div class="booking-layout">
+    <div class="booking-intro">
+      <span class="eyebrow">Il tuo prossimo appuntamento</span>
+      <h2>Il tuo stile.<br><span>Il tuo momento.</span></h2>
+      <p>Scegli il servizio, trova il momento giusto e preparati a dedicare del tempo a te stesso.</p>
+      <div class="booking-detail">
+        BLACK LABEL · BARBER SHOP<br>
+        INDIRIZZO E ORARI DA DEFINIRE<br>
+        PRENOTAZIONE DIMOSTRATIVA
+      </div>
+    </div>
+
+    <div class="booking-card">
+      <div id="step-one">
+        <div class="booking-top">
+          <span>Il tuo appuntamento</span>
+          <span class="booking-step">01 / 02</span>
+        </div>
+        <h3>Scegli il tuo servizio.</h3>
+        <p class="booking-subtitle">Iniziamo da ciò che desideri. Potrai poi scegliere giorno e orario.</p>
+
+        <span class="booking-label">Seleziona il servizio</span>
+        <div class="booking-services">
+          <button type="button" class="booking-service active" data-service="Taglio">Taglio<strong>25 €</strong></button>
+          <button type="button" class="booking-service" data-service="Taglio e barba">Taglio + barba<strong>35 €</strong></button>
+          <button type="button" class="booking-service" data-service="Barba">Barba<strong>18 €</strong></button>
+        </div>
+
+        <label class="booking-label" for="appointment-date">Scegli il giorno</label>
+        <input class="booking-input" type="date" id="appointment-date">
+
+        <span class="booking-label">Scegli l'orario</span>
+        <div class="booking-times" id="appointment-times">
+          <button type="button" class="booking-time">09:00</button>
+          <button type="button" class="booking-time">09:30</button>
+          <button type="button" class="booking-time">10:00</button>
+          <button type="button" class="booking-time">10:30</button>
+          <button type="button" class="booking-time">11:00</button>
+          <button type="button" class="booking-time">11:30</button>
+          <button type="button" class="booking-time">15:00</button>
+          <button type="button" class="booking-time">15:30</button>
+          <button type="button" class="booking-time">16:00</button>
+          <button type="button" class="booking-time">16:30</button>
+          <button type="button" class="booking-time">17:00</button>
+          <button type="button" class="booking-time">17:30</button>
+          <button type="button" class="booking-time">18:00</button>
+          <button type="button" class="booking-time">18:30</button>
+        </div>
+
+        <button type="button" class="booking-next" id="continue-booking">Continua →</button>
+        <p class="booking-disclaimer">Concept dimostrativo · Gli orari non rappresentano disponibilità effettive.</p>
+      </div>
+
+      <div id="step-two" class="booking-hidden">
+        <div class="booking-top">
+          <span>I tuoi dettagli</span>
+          <span class="booking-step">02 / 02</span>
+        </div>
+        <h3>Ci siamo quasi.</h3>
+        <p class="booking-subtitle">Inserisci i tuoi riferimenti per completare la simulazione dell'appuntamento.</p>
+
+        <div class="booking-fields">
+          <div class="full">
+            <label class="booking-label" for="client-name">Nome e cognome</label>
+            <input class="booking-input" id="client-name" type="text" placeholder="Il tuo nome" required>
+          </div>
+          <div>
+            <label class="booking-label" for="client-email">Email</label>
+            <input class="booking-input" id="client-email" type="email" placeholder="nome@email.it" required>
+          </div>
+          <div>
+            <label class="booking-label" for="client-phone">Telefono</label>
+            <input class="booking-input" id="client-phone" type="tel" placeholder="Il tuo numero">
+          </div>
+          <div class="full">
+            <label class="booking-label" for="client-notes">Note aggiuntive</label>
+            <textarea class="booking-input" id="client-notes" rows="3" placeholder="Hai qualche richiesta particolare?"></textarea>
+          </div>
+        </div>
+
+        <button type="button" class="booking-next" id="confirm-booking">Conferma appuntamento</button>
+        <button type="button" class="booking-back" id="back-booking">← Torna indietro</button>
+        <p class="booking-disclaimer">I dati inseriti non vengono inviati né salvati.</p>
+      </div>
+
+      <div id="booking-complete" class="booking-hidden booking-success">
+        <div class="symbol">B/L</div>
+        <h3>Stile confermato.</h3>
+        <p>Hai completato la simulazione del tuo appuntamento BLACK LABEL. In un sito reale, qui riceveresti una conferma effettiva.</p>
+        <p class="booking-disclaimer">Questa è una demo: non è stato prenotato alcun appuntamento.</p>
+        <button type="button" class="booking-next" id="restart-booking">Torna all'inizio</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-strip">
+  <div class="contact-strip-inner">
+    <div>
+      <h2>Pronto a definire il tuo stile?</h2>
+      <p>Il prossimo passo comincia da qui.</p>
+    </div>
+    <a href="#prenota" class="btn">Prenota il tuo momento ↗</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <div class="footer-logo">BLACK <span>LABEL</span></div>
+      <p>Non seguiamo le tendenze. Lavoriamo per trovare lo stile che ti rappresenta.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Esplora</h4>
+      <a href="#filosofia">Il concept</a>
+      <a href="#servizi">I servizi</a>
+      <a href="#galleria">La galleria</a>
+      <a href="#prenota">Prenotazioni</a>
+    </div>
+    <div class="footer-col">
+      <h4>Informazioni</h4>
+      <p>Indirizzo da definire</p>
+      <p>Telefono da definire</p>
+      <p>Email da definire</p>
+      <p>Orari da definire</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 BLACK LABEL · PROGETTO DIMOSTRATIVO</span>
+    <span>REALIZZATO DA STUDIO WEB</span>
+  </div>
+</footer>
+
+<script>
+const serviceButtons = document.querySelectorAll(".booking-service");
+const serviceCards = document.querySelectorAll(".service-select");
+let selectedService = "Taglio";
+let selectedTime = "";
+
+function chooseService(service){
+  selectedService = service;
+  serviceButtons.forEach(button => {
+    button.classList.toggle("active", button.dataset.service === service);
+  });
+}
+
+serviceButtons.forEach(button => {
+  button.addEventListener("click", () => chooseService(button.dataset.service));
+});
+
+serviceCards.forEach(button => {
+  button.addEventListener("click", () => {
+    chooseService(button.dataset.service);
+    document.getElementById("prenota").scrollIntoView({behavior:"smooth"});
+  });
+});
+
+const dateField = document.getElementById("appointment-date");
+const now = new Date();
+const today = new Date(now.getTime() - now.getTimezoneOffset()*60000).toISOString().split("T")[0];
+dateField.min = today;
+dateField.value = today;
+
+document.querySelectorAll(".booking-time").forEach(button => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll(".booking-time").forEach(item => item.classList.remove("active"));
+    button.classList.add("active");
+    selectedTime = button.textContent;
+  });
+});
+
+document.getElementById("continue-booking").addEventListener("click", () => {
+  if(!dateField.value){
+    alert("Seleziona il giorno del tuo appuntamento.");
+    return;
+  }
+  if(dateField.value < today){
+    alert("Seleziona una data valida.");
+    return;
+  }
+  if(!selectedTime){
+    alert("Seleziona l'orario che preferisci.");
+    return;
+  }
+  document.getElementById("step-one").classList.add("booking-hidden");
+  document.getElementById("step-two").classList.remove("booking-hidden");
+});
+
+document.getElementById("back-booking").addEventListener("click", () => {
+  document.getElementById("step-two").classList.add("booking-hidden");
+  document.getElementById("step-one").classList.remove("booking-hidden");
+});
+
+document.getElementById("confirm-booking").addEventListener("click", () => {
+  const name = document.getElementById("client-name");
+  const email = document.getElementById("client-email");
+
+  if(!name.value.trim() || !email.value.trim()){
+    alert("Inserisci il nome e l'indirizzo email.");
+    return;
+  }
+  if(!email.checkValidity()){
+    alert("Inserisci un indirizzo email valido.");
+    return;
+  }
+
+  document.getElementById("step-two").classList.add("booking-hidden");
+  document.getElementById("booking-complete").classList.remove("booking-hidden");
+});
+
+document.getElementById("restart-booking").addEventListener("click", () => {
+  document.getElementById("booking-complete").classList.add("booking-hidden");
+  document.getElementById("step-one").classList.remove("booking-hidden");
+
+  document.getElementById("client-name").value = "";
+  document.getElementById("client-email").value = "";
+  document.getElementById("client-phone").value = "";
+  document.getElementById("client-notes").value = "";
+
+  selectedTime = "";
+  document.querySelectorAll(".booking-time").forEach(button => button.classList.remove("active"));
+  chooseService("Taglio");
+  dateField.value = today;
+});
+</script>
+
+</body>
+</html>
