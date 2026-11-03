@@ -3,1238 +3,412 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#171C24">
-<meta name="description" content="BLACK LABEL Barber Club. Taglio uomo, barba e cura dello stile.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#171c24">
 <title>BLACK LABEL — Barber Club</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --navy: #171C24;
-  --navy-light: #252D38;
-  --slate: #343B43;
-  --cream: #F4F0E8;
-  --cream-dark: #E9E3D8;
-  --gold: #D8C5A5;
-  --gold-dark: #B9A27E;
-  --white: #FFFFFF;
-  --muted: #A9A9A6;
-  --line: rgba(216,197,165,.25);
-  --serif: "Playfair Display", Georgia, serif;
-  --sans: "Manrope", sans-serif;
-}
-
-* { box-sizing: border-box; }
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 85px;
-}
-
-body {
-  margin: 0;
-  background: var(--cream);
-  color: var(--navy);
-  font-family: var(--sans);
-  -webkit-font-smoothing: antialiased;
-}
-
-a { color: inherit; text-decoration: none; }
-button, input, select { font: inherit; }
-button { cursor: pointer; }
-
-.container {
-  width: min(1160px, 88%);
-  margin: auto;
-}
-
-/* NAVIGAZIONE */
-
-header {
-  height: 82px;
-  background: var(--navy);
-  color: var(--cream);
-  display: flex;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  border-bottom: 1px solid rgba(255,255,255,.08);
-}
-
-.nav-inner {
-  width: min(1320px, 90%);
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.logo-symbol {
-  width: 38px;
-  height: 38px;
-  border: 1px solid var(--gold);
-  color: var(--gold);
-  display: grid;
-  place-items: center;
-  font-family: var(--serif);
-  font-size: 23px;
-}
-
-.logo-text {
-  font-size: 15px;
-  font-weight: 800;
-  letter-spacing: 3px;
-}
-
-.logo-text small {
-  display: block;
-  font-size: 8px;
-  letter-spacing: 3.5px;
-  color: var(--gold);
-  margin-top: 4px;
-  font-weight: 500;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 34px;
-}
-
-.nav-links a {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1.6px;
-  color: #D5D3CE;
-  transition: color .2s;
-}
-
-.nav-links a:hover { color: var(--gold); }
-
-.nav-button {
-  padding: 13px 21px;
-  background: var(--gold);
-  color: var(--navy);
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 1.3px;
-  text-transform: uppercase;
-  transition: .2s;
-}
-
-.nav-button:hover { background: var(--cream); }
-
-.menu-toggle {
-  display: none;
-  background: none;
-  color: var(--cream);
-  border: 1px solid var(--line);
-  padding: 9px 12px;
-}
-
-/* HERO */
-
-.hero {
-  background: var(--navy);
-  color: var(--cream);
-  padding: 58px 0 75px;
-}
-
-.hero-grid {
-  width: min(1320px, 90%);
-  margin: auto;
-  display: grid;
-  grid-template-columns: .88fr 1.12fr;
-  gap: 65px;
-  align-items: center;
-}
-
-.eyebrow {
-  color: var(--gold-dark);
-  text-transform: uppercase;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.eyebrow:before {
-  content: "";
-  height: 1px;
-  width: 28px;
-  background: var(--gold-dark);
-}
-
-.hero h1 {
-  font-family: var(--serif);
-  font-size: clamp(60px, 7.2vw, 100px);
-  font-weight: 500;
-  line-height: .99;
-  letter-spacing: -3px;
-  margin: 28px 0 25px;
-}
-
-.hero h1 em {
-  color: var(--gold);
-  font-weight: 500;
-}
-
-.hero-description {
-  max-width: 390px;
-  color: #BFC0BF;
-  font-size: 13px;
-  line-height: 2;
-}
-
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  margin-top: 35px;
-}
-
-.button-gold {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 22px;
-  padding: 16px 22px;
-  background: var(--gold);
-  color: var(--navy);
-  border: 1px solid var(--gold);
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  font-size: 10px;
-  font-weight: 800;
-  transition: .25s;
-}
-
-.button-gold:hover {
-  background: transparent;
-  color: var(--gold);
-}
-
-.text-link {
-  font-size: 10px;
-  color: #D4D2CB;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  border-bottom: 1px solid var(--gold-dark);
-  padding-bottom: 5px;
-}
-
-.hero-visual {
-  height: 550px;
-  position: relative;
-  background: #343B43;
-  overflow: hidden;
-}
-
-.hero-visual img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.hero-visual:after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(0deg, rgba(15,20,27,.45), transparent 55%);
-  pointer-events: none;
-}
-
-.hero-caption {
-  position: absolute;
-  z-index: 2;
-  bottom: 25px;
-  left: 28px;
-  color: white;
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-/* STRIP */
-
-.info-strip {
-  background: var(--cream-dark);
-  border-bottom: 1px solid #D8D0C4;
-}
-
-.info-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.info-item {
-  padding: 24px 15px;
-  text-align: center;
-  border-right: 1px solid #D8D0C4;
-}
-
-.info-item:last-child { border: 0; }
-
-.info-item strong {
-  display: block;
-  font-family: var(--serif);
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 5px;
-}
-
-.info-item span {
-  font-size: 9px;
-  letter-spacing: 1.7px;
-  text-transform: uppercase;
-  color: #77746D;
-}
-
-/* INTRO */
-
-.intro {
-  padding: 115px 0;
-}
-
-.intro-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 95px;
-  align-items: center;
-}
-
-.intro-image {
-  height: 510px;
-  position: relative;
-  background: #C8C1B5;
-}
-
-.intro-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.image-tag {
-  position: absolute;
-  right: -18px;
-  bottom: 28px;
-  background: var(--navy);
-  color: var(--gold);
-  padding: 18px 24px;
-  font-size: 9px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.section-kicker {
-  color: var(--gold-dark);
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-}
-
-.intro h2,
-.section-heading {
-  font-family: var(--serif);
-  font-size: clamp(42px, 5vw, 65px);
-  line-height: 1.12;
-  font-weight: 500;
-  letter-spacing: -1.5px;
-}
-
-.intro h2 { margin: 20px 0; }
-
-.intro h2 em { color: #A58E6C; }
-
-.intro-copy {
-  font-size: 13px;
-  line-height: 2;
-  color: #666963;
-  max-width: 440px;
-}
-
-.intro-signature {
-  margin-top: 35px;
-  padding-top: 25px;
-  border-top: 1px solid #D8D0C4;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.signature-mark {
-  width: 43px;
-  height: 43px;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--gold-dark);
-  color: var(--gold-dark);
-  font-family: var(--serif);
-  font-size: 23px;
-}
-
-.intro-signature strong {
-  display: block;
-  font-size: 11px;
-  letter-spacing: 1px;
-}
-
-.intro-signature span {
-  font-size: 9px;
-  color: #85847D;
-  display: block;
-  margin-top: 4px;
-}
-
-/* SERVIZI */
-
-.services {
-  background: var(--navy);
-  color: var(--cream);
-  padding: 105px 0 115px;
-}
-
-.services-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 35px;
-  margin-bottom: 55px;
-}
-
-.services .section-heading {
-  margin: 15px 0 0;
-  color: var(--cream);
-}
-
-.services-intro {
-  max-width: 330px;
-  color: #B7B8B6;
-  font-size: 12px;
-  line-height: 1.9;
-}
-
-.service-list {
-  border-top: 1px solid var(--line);
-}
-
-.service-card {
-  display: grid;
-  grid-template-columns: 75px 1fr 210px 110px;
-  align-items: center;
-  gap: 25px;
-  padding: 30px 5px;
-  border-bottom: 1px solid var(--line);
-  transition: background .2s, padding .2s;
-}
-
-.service-card:hover {
-  background: rgba(255,255,255,.035);
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
-.service-number {
-  color: var(--gold-dark);
-  font-size: 11px;
-  letter-spacing: 1px;
-}
-
-.service-name {
-  font-family: var(--serif);
-  font-size: 30px;
-  font-weight: 500;
-}
-
-.service-description {
-  color: #A8AAA9;
-  font-size: 11px;
-}
-
-.service-price {
-  color: var(--gold);
-  font-family: var(--serif);
-  font-size: 27px;
-  text-align: right;
-}
-
-.services-note {
-  color: #9FA19F;
-  font-size: 10px;
-  margin-top: 23px;
-}
-
-/* ESPERIENZA */
-
-.experience {
-  padding: 110px 0;
-  background: var(--cream-dark);
-}
-
-.experience-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 75px;
-  align-items: center;
-}
-
-.experience h2 {
-  font-family: var(--serif);
-  font-weight: 500;
-  font-size: clamp(43px, 5vw, 65px);
-  line-height: 1.1;
-  margin: 18px 0 24px;
-}
-
-.experience-copy {
-  font-size: 13px;
-  line-height: 2;
-  color: #656760;
-  max-width: 440px;
-}
-
-.experience-image {
-  height: 470px;
-  background: #B8B0A4;
-}
-
-.experience-image img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.features {
-  margin-top: 34px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-}
-
-.feature {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .7px;
-}
-
-.feature span {
-  color: var(--gold-dark);
-  font-size: 17px;
-}
+:root{
+ --night:#171c24;--night2:#222b36;--slate:#343b43;
+ --cream:#f4f0e8;--paper:#e9e3d8;--gold:#d8c5a5;
+ --gold2:#b9a27e;--white:#fff;--muted:#a9aaa8;
+ --serif:"Playfair Display",Georgia,serif;
+ --sans:"DM Sans",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--cream);color:var(--night);font-family:var(--sans)}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit}
+img{display:block;width:100%;height:100%;object-fit:cover}
+.wrap{width:min(1240px,88%);margin:auto}
+
+/* HEADER */
+header{height:82px;background:var(--night);color:var(--cream);display:flex;align-items:center;position:sticky;top:0;z-index:20;border-bottom:1px solid #ffffff18}
+.header-inner{width:90%;max-width:1400px;margin:auto;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-icon{width:39px;height:39px;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold);font:24px var(--serif)}
+.logo-name{font-size:13px;letter-spacing:3px;font-weight:700}
+.logo-name small{display:block;font-size:8px;color:var(--gold);letter-spacing:3px;margin-top:4px;font-weight:400}
+nav{display:flex;align-items:center;gap:32px}
+nav a{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#d4d1ca}
+nav a:hover{color:var(--gold)}
+.header-book{padding:13px 20px;background:var(--gold);color:var(--night);font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.menu{display:none;background:none;color:var(--cream);border:1px solid #ffffff44;padding:9px 12px}
+
+/* COVER */
+.cover{height:min(760px,calc(100vh - 82px));min-height:590px;background:var(--night);position:relative;color:white;overflow:hidden}
+.cover-photo{position:absolute;inset:0}
+.cover-photo img{object-position:center 45%}
+.cover-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,20,28,.92) 0%,rgba(15,20,28,.62) 47%,rgba(15,20,28,.12) 100%),linear-gradient(0deg,rgba(15,20,28,.5),transparent 45%)}
+.cover-content{position:relative;z-index:2;width:90%;max-width:1240px;margin:auto;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.overline{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:600}
+.cover h1{font:500 clamp(65px,10vw,130px)/.99 var(--serif);letter-spacing:-4px;margin:25px 0 22px}
+.cover h1 span{color:var(--gold);font-style:italic}
+.cover p{max-width:410px;color:#dedbd5;font-size:13px;line-height:2}
+.cover-actions{display:flex;align-items:center;gap:25px;margin-top:25px}
+.gold-button{display:inline-flex;align-items:center;gap:24px;background:var(--gold);color:var(--night);padding:17px 22px;font-size:9px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;border:1px solid var(--gold);transition:.2s}
+.gold-button:hover{background:transparent;color:var(--gold)}
+.cover-link{font-size:10px;letter-spacing:1px;text-transform:uppercase;border-bottom:1px solid var(--gold);padding-bottom:7px}
+.cover-index{position:absolute;right:5%;bottom:35px;z-index:2;color:#ffffffa8;font-size:9px;letter-spacing:2px}
+
+/* INTRO BAND */
+.band{background:var(--gold);padding:25px 0}
+.band-inner{display:flex;justify-content:space-between;gap:25px;align-items:center}
+.band-item{font:500 19px var(--serif);color:var(--night)}
+.band-item small{display:block;font:9px var(--sans);letter-spacing:1.5px;text-transform:uppercase;margin-top:5px;color:#4c4b46}
+
+/* STORY */
+.story{padding:120px 0}
+.story-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:9%;align-items:center}
+.story-photo{height:590px;position:relative;background:#c8c0b3}
+.story-photo:after{content:"";position:absolute;inset:16px;border:1px solid #ffffff80;pointer-events:none}
+.story-copy .label,.section-label{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold2);font-weight:700}
+.story h2,.section-title{font:500 clamp(42px,5.2vw,67px)/1.12 var(--serif);letter-spacing:-1.5px;margin:20px 0}
+.story h2 em{color:var(--gold2)}
+.story-copy p{font-size:13px;line-height:2.1;color:#696a66;max-width:430px}
+.story-detail{margin-top:35px;padding-top:22px;border-top:1px solid #d5cec2;display:flex;align-items:center;gap:15px}
+.story-detail b{font:24px var(--serif);color:var(--gold2);border:1px solid var(--gold2);width:45px;height:45px;display:grid;place-items:center}
+.story-detail span{font-size:10px;letter-spacing:1px;text-transform:uppercase;font-weight:700}
+
+/* SERVICES */
+.services{background:var(--night);color:var(--cream);padding:105px 0 115px}
+.services-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:48px}
+.services-head .section-title{margin:15px 0 0}
+.services-head p{max-width:310px;color:#b6b7b5;font-size:12px;line-height:1.9}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.service-card{background:var(--night2);border:1px solid #ffffff12;min-height:310px;padding:28px;display:flex;flex-direction:column;position:relative;transition:.25s}
+.service-card:hover{transform:translateY(-6px);border-color:var(--gold2)}
+.service-card.featured{background:var(--gold);color:var(--night)}
+.service-number{font-size:10px;letter-spacing:2px;color:var(--gold2)}
+.featured .service-number{color:#79684e}
+.service-icon{font:36px var(--serif);margin:38px 0 20px;color:var(--gold)}
+.featured .service-icon{color:#79684e}
+.service-card h3{font:500 27px var(--serif);margin:0 0 10px}
+.service-card p{font-size:11px;line-height:1.8;color:#b8b9b6;margin:0;max-width:250px}
+.featured p{color:#59574f}
+.service-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:25px}
+.service-price{font:27px var(--serif);color:var(--gold)}
+.featured .service-price{color:var(--night)}
+.service-arrow{font-size:18px;color:var(--gold)}
+.featured .service-arrow{color:var(--night)}
+.service-note{font-size:9px;color:#aeb0ae;margin-top:22px}
+
+/* IMAGE FEATURE */
+.feature{display:grid;grid-template-columns:1fr 1fr;min-height:540px;background:var(--paper)}
+.feature-image{min-height:540px}
+.feature-text{padding:80px clamp(35px,7vw,100px);display:flex;flex-direction:column;justify-content:center}
+.feature-text h2{font:500 clamp(42px,5vw,65px)/1.1 var(--serif);margin:18px 0}
+.feature-text p{font-size:13px;color:#676861;line-height:2;max-width:410px}
+.feature-quote{margin-top:30px;padding-top:22px;border-top:1px solid #cec6b9;font:italic 17px var(--serif);color:#8c7859}
 
 /* GALLERY */
+.gallery{padding:105px 0}
+.gallery-top{text-align:center;margin-bottom:40px}
+.gallery-top .section-title{margin:14px 0}
+.gallery-grid{display:grid;grid-template-columns:1.25fr .8fr .8fr;gap:12px;height:390px}
+.gallery-cell{overflow:hidden;background:#bdb5a8}
+.gallery-cell img{transition:transform .5s}
+.gallery-cell:hover img{transform:scale(1.04)}
 
-.gallery {
-  padding: 100px 0;
-}
-
-.gallery-header {
-  text-align: center;
-  margin-bottom: 45px;
-}
-
-.gallery-header .eyebrow {
-  justify-content: center;
-}
-
-.gallery-header .eyebrow:after {
-  content: "";
-  height: 1px;
-  width: 28px;
-  background: var(--gold-dark);
-}
-
-.gallery-header .section-heading {
-  margin: 16px 0 0;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: 1.15fr .85fr .85fr;
-  gap: 17px;
-  height: 360px;
-}
-
-.gallery-photo {
-  overflow: hidden;
-  background: #C9C2B7;
-}
-
-.gallery-photo img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  transition: transform .6s;
-}
-
-.gallery-photo:hover img { transform: scale(1.04); }
-
-/* PRENOTAZIONE */
-
-.booking {
-  padding: 105px 0;
-  background: var(--navy);
-  color: var(--cream);
-}
-
-.booking-grid {
-  display: grid;
-  grid-template-columns: .75fr 1.25fr;
-  gap: 80px;
-  align-items: start;
-}
-
-.booking-copy h2 {
-  font-family: var(--serif);
-  font-size: clamp(50px, 6vw, 75px);
-  line-height: 1.03;
-  font-weight: 500;
-  margin: 20px 0;
-}
-
-.booking-copy h2 em { color: var(--gold); }
-
-.booking-copy p {
-  color: #B7B8B6;
-  font-size: 13px;
-  line-height: 2;
-  max-width: 330px;
-}
-
-.booking-contact {
-  margin-top: 38px;
-  padding-top: 25px;
-  border-top: 1px solid var(--line);
-}
-
-.booking-contact span {
-  display: block;
-  color: var(--gold-dark);
-  font-size: 9px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-
-.booking-contact strong {
-  font-size: 12px;
-  font-weight: 500;
-  color: #E1DED6;
-}
-
-.booking-form {
-  background: var(--cream);
-  color: var(--navy);
-  padding: 42px;
-}
-
-.form-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 15px;
-  padding-bottom: 25px;
-  border-bottom: 1px solid #D8D0C4;
-  margin-bottom: 30px;
-}
-
-.form-heading strong {
-  font-family: var(--serif);
-  font-size: 27px;
-  font-weight: 500;
-}
-
-.form-heading span {
-  color: #A58E6C;
-  font-size: 9px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px;
-}
-
-.form-field { margin-bottom: 23px; }
-
-.form-field label {
-  display: block;
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 1.3px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
-.form-field input,
-.form-field select {
-  width: 100%;
-  padding: 13px 0;
-  border: 0;
-  border-bottom: 1px solid #CFC8BC;
-  background: transparent;
-  outline: none;
-  color: var(--navy);
-  border-radius: 0;
-  font-size: 12px;
-}
-
-.form-field input:focus,
-.form-field select:focus {
-  border-color: var(--gold-dark);
-}
-
-.form-field input::placeholder { color: #99968E; }
-
-.form-submit {
-  width: 100%;
-  margin-top: 8px;
-  padding: 18px;
-  border: 0;
-  background: var(--navy);
-  color: var(--gold);
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  transition: .2s;
-}
-
-.form-submit:hover { background: var(--slate); }
-
-.form-message {
-  display: none;
-  padding: 14px;
-  margin-top: 17px;
-  background: #E7E0D4;
-  color: var(--navy);
-  font-size: 11px;
-  line-height: 1.7;
-}
+/* BOOKING */
+.booking{background:var(--night2);color:var(--cream);padding:105px 0}
+.booking-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:8%;align-items:start}
+.booking-info h2{font:500 clamp(48px,6vw,76px)/1.08 var(--serif);margin:20px 0}
+.booking-info h2 em{color:var(--gold)}
+.booking-info p{font-size:12px;line-height:2;color:#b9bbb9;max-width:340px}
+.booking-meta{margin-top:38px;border-top:1px solid #ffffff24;padding-top:22px}
+.booking-meta span{display:block;color:var(--gold);font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:9px}
+.booking-meta strong{font-size:12px;font-weight:500}
+.booking-form{background:var(--cream);color:var(--night);padding:40px}
+.form-title{display:flex;justify-content:space-between;gap:15px;align-items:center;border-bottom:1px solid #d8d0c4;padding-bottom:23px;margin-bottom:28px}
+.form-title h3{font:500 25px var(--serif);margin:0}
+.form-title span{font-size:8px;color:#9a8769;letter-spacing:1.5px;text-transform:uppercase}
+.field{margin-bottom:22px}
+.field label{display:block;font-size:9px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:9px}
+.field input,.field select{width:100%;border:0;border-bottom:1px solid #cbc4b8;background:transparent;border-radius:0;padding:12px 0;font-size:12px;color:var(--night);outline:none}
+.field input:focus,.field select:focus{border-color:#9b835f}
+.field input::placeholder{color:#99958d}
+.fields-two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.submit{width:100%;border:0;background:var(--night);color:var(--gold);padding:18px;font-size:9px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;transition:.2s}
+.submit:hover{background:var(--slate)}
+.notice{display:none;margin-top:15px;background:#e5ddcf;padding:14px;color:var(--night);font-size:11px;line-height:1.7}
 
 /* FOOTER */
+footer{background:#11161d;color:var(--cream);padding:42px 0 25px}
+.footer-main{display:flex;justify-content:space-between;align-items:center;gap:25px;padding-bottom:30px;border-bottom:1px solid #ffffff20}
+.footer-logo{font:25px var(--serif);letter-spacing:1px}
+.footer-logo span{color:var(--gold)}
+.footer-links{display:flex;gap:25px;flex-wrap:wrap}
+.footer-links a{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#c4c3bd}
+.footer-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:20px;color:#858a8e;font-size:9px;letter-spacing:.5px}
 
-footer {
-  background: #11161D;
-  color: var(--cream);
-  padding: 45px 0 25px;
+/* MOBILE */
+@media(max-width:800px){
+ nav{display:none;position:absolute;top:81px;left:0;right:0;background:var(--night);padding:25px 6%;flex-direction:column;align-items:flex-start;gap:22px}
+ nav.open{display:flex}
+ .menu{display:block}
+ .header-book{display:none}
+ .cover{min-height:660px;height:calc(100vh - 72px)}
+ .cover-photo:after{background:linear-gradient(90deg,rgba(15,20,28,.88),rgba(15,20,28,.38)),linear-gradient(0deg,rgba(15,20,28,.45),transparent)}
+ .cover h1{font-size:clamp(60px,13vw,95px)}
+ .band-inner{display:grid;grid-template-columns:1fr 1fr}
+ .band-item{font-size:16px}
+ .story{padding:75px 0}
+ .story-grid{grid-template-columns:1fr;gap:40px}
+ .story-photo{height:400px}
+ .services{padding:75px 0}
+ .services-head{display:block}
+ .services-head p{margin-top:20px}
+ .service-grid{grid-template-columns:1fr}
+ .service-card{min-height:250px}
+ .service-icon{margin:20px 0}
+ .feature{grid-template-columns:1fr}
+ .feature-image{min-height:360px;height:360px}
+ .feature-text{padding:60px 7%}
+ .gallery{padding:75px 0}
+ .gallery-grid{height:auto;grid-template-columns:1fr 1fr}
+ .gallery-cell{height:230px}
+ .gallery-cell:first-child{grid-column:1/-1;height:280px}
+ .booking{padding:75px 0}
+ .booking-layout{grid-template-columns:1fr;gap:38px}
+ .booking-form{padding:28px 22px}
+ .footer-main,.footer-bottom{align-items:flex-start;flex-direction:column}
 }
-
-.footer-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 30px;
-  padding-bottom: 35px;
-  border-bottom: 1px solid rgba(216,197,165,.18);
-}
-
-.footer-brand {
-  font-family: var(--serif);
-  font-size: 28px;
-  letter-spacing: 1px;
-}
-
-.footer-brand span { color: var(--gold); }
-
-.footer-nav {
-  display: flex;
-  gap: 25px;
-  flex-wrap: wrap;
-}
-
-.footer-nav a {
-  font-size: 9px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #C5C5C0;
-}
-
-.footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  padding-top: 22px;
-  color: #888C90;
-  font-size: 9px;
-  letter-spacing: 1px;
-}
-
-/* RESPONSIVE */
-
-@media(max-width: 900px) {
-  .hero-grid { gap: 35px; }
-  .hero-visual { height: 460px; }
-  .intro-grid { gap: 50px; }
-  .booking-grid { gap: 40px; }
-  .service-card { grid-template-columns: 45px 1fr 130px 75px; gap: 15px; }
-  .service-name { font-size: 25px; }
-}
-
-@media(max-width: 700px) {
-  header { height: 72px; }
-  .nav-inner { width: 90%; }
-  .menu-toggle { display: block; }
-  .nav-button { display: none; }
-
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 72px;
-    left: 0;
-    right: 0;
-    background: var(--navy);
-    padding: 25px 6%;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 23px;
-    border-top: 1px solid var(--line);
-  }
-
-  .nav-links.open { display: flex; }
-
-  .hero { padding: 50px 0; }
-  .hero-grid {
-    grid-template-columns: 1fr;
-    width: 88%;
-    gap: 38px;
-  }
-
-  .hero h1 { font-size: clamp(62px, 16vw, 90px); }
-  .hero-visual { height: 420px; }
-
-  .info-grid { grid-template-columns: 1fr; }
-  .info-item {
-    border-right: 0;
-    border-bottom: 1px solid #D8D0C4;
-    padding: 17px;
-  }
-  .info-item:last-child { border-bottom: 0; }
-
-  .intro, .services, .experience, .gallery, .booking {
-    padding: 75px 0;
-  }
-
-  .intro-grid, .experience-grid, .booking-grid {
-    grid-template-columns: 1fr;
-    gap: 38px;
-  }
-
-  .intro-image { height: 390px; margin-right: 15px; }
-  .services-top { display: block; }
-  .services-intro { margin-top: 22px; }
-
-  .service-card {
-    grid-template-columns: 32px 1fr auto;
-    gap: 10px;
-    padding: 23px 0;
-  }
-
-  .service-description { display: none; }
-  .service-name { font-size: 23px; }
-  .service-price { font-size: 23px; }
-
-  .experience-image { height: 360px; }
-  .gallery-grid {
-    height: auto;
-    grid-template-columns: 1fr 1fr;
-  }
-  .gallery-photo { height: 220px; }
-  .gallery-photo:first-child {
-    grid-column: 1 / -1;
-    height: 270px;
-  }
-
-  .booking-form { padding: 27px 21px; }
-  .footer-top, .footer-bottom {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-}
-
-@media(max-width: 420px) {
-  .hero-actions { align-items: flex-start; flex-direction: column; }
-  .hero-visual { height: 340px; }
-  .form-row { grid-template-columns: 1fr; gap: 0; }
-  .features { grid-template-columns: 1fr; }
-  .form-heading { align-items: flex-start; flex-direction: column; }
+@media(max-width:430px){
+ .cover-actions{align-items:flex-start;flex-direction:column}
+ .cover{min-height:620px}
+ .fields-two{grid-template-columns:1fr;gap:0}
+ .band-inner{gap:20px}
+ .form-title{align-items:flex-start;flex-direction:column}
 }
 </style>
 </head>
-
 <body>
 
 <header>
-  <div class="nav-inner">
-    <a href="#" class="logo">
-      <div class="logo-symbol">B</div>
-      <div class="logo-text">
-        BLACK LABEL
-        <small>BARBER CLUB</small>
-      </div>
-    </a>
-
-    <nav class="nav-links" id="navLinks">
-      <a href="#studio">Lo studio</a>
-      <a href="#servizi">Servizi</a>
-      <a href="#esperienza">La filosofia</a>
-      <a href="#prenota">Contatti</a>
-    </nav>
-
-    <a href="#prenota" class="nav-button">Prenota un appuntamento</a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Apri menu">☰</button>
-  </div>
+ <div class="header-inner">
+  <a href="#" class="logo">
+   <span class="logo-icon">B</span>
+   <span class="logo-name">BLACK LABEL<small>BARBER CLUB</small></span>
+  </a>
+  <nav id="navigation">
+   <a href="#studio">Lo studio</a>
+   <a href="#servizi">Servizi</a>
+   <a href="#esperienza">Esperienza</a>
+   <a href="#prenota">Prenotazioni</a>
+  </nav>
+  <a class="header-book" href="#prenota">Prenota ora ↗</a>
+  <button class="menu" id="menu" aria-label="Apri menu">☰</button>
+ </div>
 </header>
 
 <main>
-
-<!-- HERO -->
-<section class="hero" id="studio">
-  <div class="hero-grid">
-    <div class="hero-content">
-      <div class="eyebrow">Barber club · Cura dello stile</div>
-
-      <h1>Il tuo stile.<br><em>La nostra</em><br>firma.</h1>
-
-      <p class="hero-description">
-        Un luogo dedicato alla cura personale, dove tecnica,
-        attenzione e stile si incontrano. Dal taglio alla barba,
-        ogni dettaglio conta.
-      </p>
-
-      <div class="hero-actions">
-        <a href="#prenota" class="button-gold">Prenota il tuo momento <span>↗</span></a>
-        <a href="#servizi" class="text-link">Scopri i servizi</a>
-      </div>
-    </div>
-
-    <div class="hero-visual">
-      <img
-        src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1500&q=85"
-        alt="Ambiente elegante di un barber shop"
-        onerror="this.style.display='none';this.parentElement.style.background='#343B43'">
-      <div class="hero-caption">BLACK LABEL · Barber Club</div>
-    </div>
+<section class="cover">
+ <div class="cover-photo">
+  <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=2000&q=85" alt="Interno barber shop">
+ </div>
+ <div class="cover-content">
+  <div class="overline">Barber club · Cura dello stile</div>
+  <h1>Il piacere<br>di essere <span>te.</span></h1>
+  <p>Un ambiente dedicato alla cura personale. Taglio, barba e attenzione al dettaglio, in un'esperienza pensata intorno a te.</p>
+  <div class="cover-actions">
+   <a class="gold-button" href="#prenota">Prenota un appuntamento <span>↗</span></a>
+   <a class="cover-link" href="#servizi">Esplora i servizi</a>
   </div>
+ </div>
+ <div class="cover-index">01 — BLACK LABEL BARBER CLUB</div>
 </section>
 
-<!-- DETTAGLI -->
-<section class="info-strip">
-  <div class="container info-grid">
-    <div class="info-item">
-      <strong>Precisione</strong>
-      <span>Attenzione a ogni dettaglio</span>
-    </div>
-    <div class="info-item">
-      <strong>Personalità</strong>
-      <span>Uno stile che ti rappresenta</span>
-    </div>
-    <div class="info-item">
-      <strong>Qualità</strong>
-      <span>Il valore del lavoro fatto bene</span>
-    </div>
-  </div>
+<section class="band">
+ <div class="wrap band-inner">
+  <div class="band-item">Precisione<small>Ogni dettaglio conta</small></div>
+  <div class="band-item">Personalità<small>Il tuo stile, senza compromessi</small></div>
+  <div class="band-item">Qualità<small>La cura del lavoro fatto bene</small></div>
+ </div>
 </section>
 
-<!-- INTRODUZIONE -->
-<section class="intro">
-  <div class="container intro-grid">
-    <div class="intro-image">
-      <img
-        src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1100&q=85"
-        alt="Lavorazione professionale di un taglio"
-        onerror="this.style.display='none';this.parentElement.style.background='#C8C1B5'">
-      <div class="image-tag">Un'esperienza personale</div>
-    </div>
-
-    <div class="intro-content">
-      <div class="section-kicker">Black Label · Il concept</div>
-      <h2>Non solo un taglio.<br><em>Un modo di essere.</em></h2>
-
-      <p class="intro-copy">
-        BLACK LABEL nasce dall'idea che lo stile non debba essere
-        complicato. Deve essere autentico, curato e adatto a chi lo
-        indossa. Ogni appuntamento è un momento dedicato a te,
-        alle tue esigenze e al tuo modo di esprimerti.
-      </p>
-
-      <div class="intro-signature">
-        <div class="signature-mark">B</div>
-        <div>
-          <strong>BLACK LABEL BARBER CLUB</strong>
-          <span>Stile, cura e attenzione.</span>
-        </div>
-      </div>
-    </div>
+<section class="story" id="studio">
+ <div class="wrap story-grid">
+  <div class="story-photo">
+   <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1200&q=85" alt="Barbiere al lavoro">
   </div>
+  <div class="story-copy">
+   <div class="label">Il nostro spazio</div>
+   <h2>Un luogo.<br>Una passione.<br><em>Il tuo stile.</em></h2>
+   <p>BLACK LABEL interpreta il barber shop in chiave contemporanea: un luogo in cui concedersi una pausa, affidarsi a mani esperte e ritrovare il proprio stile.</p>
+   <p>Ogni servizio parte dall'ascolto delle tue preferenze. Il risultato deve parlare di te, non seguire una formula uguale per tutti.</p>
+   <div class="story-detail">
+    <b>B</b><span>BLACK LABEL<br>Barber Club</span>
+   </div>
+  </div>
+ </div>
 </section>
 
-<!-- SERVIZI -->
 <section class="services" id="servizi">
-  <div class="container">
-    <div class="services-top">
-      <div>
-        <div class="eyebrow">Il nostro listino</div>
-        <h2 class="section-heading">I servizi.</h2>
-      </div>
-      <p class="services-intro">
-        Un listino essenziale, pensato per offrirti ciò che serve
-        davvero. Scegli il servizio più adatto al tuo stile.
-      </p>
-    </div>
-
-    <div class="service-list">
-      <div class="service-card">
-        <span class="service-number">01</span>
-        <div class="service-name">Taglio uomo</div>
-        <div class="service-description">Taglio, rifinitura e styling</div>
-        <div class="service-price">€28</div>
-      </div>
-
-      <div class="service-card">
-        <span class="service-number">02</span>
-        <div class="service-name">Barba</div>
-        <div class="service-description">Definizione e cura della barba</div>
-        <div class="service-price">€20</div>
-      </div>
-
-      <div class="service-card">
-        <span class="service-number">03</span>
-        <div class="service-name">Taglio + barba</div>
-        <div class="service-description">Un servizio completo</div>
-        <div class="service-price">€42</div>
-      </div>
-    </div>
-
-    <p class="services-note">Prezzi indicativi del concept dimostrativo.</p>
+ <div class="wrap">
+  <div class="services-head">
+   <div>
+    <div class="section-label">Il listino</div>
+    <h2 class="section-title">Scegli il tuo servizio.</h2>
+   </div>
+   <p>Tre proposte essenziali, realizzate con cura e attenzione alle tue esigenze.</p>
   </div>
+  <div class="service-grid">
+   <article class="service-card">
+    <div class="service-number">SERVIZIO 01</div>
+    <div class="service-icon">✂</div>
+    <h3>Taglio uomo</h3>
+    <p>Taglio personalizzato, rifinitura e styling finale.</p>
+    <div class="service-bottom"><span class="service-price">€28</span><span class="service-arrow">↗</span></div>
+   </article>
+   <article class="service-card featured">
+    <div class="service-number">SERVIZIO 02</div>
+    <div class="service-icon">✦</div>
+    <h3>Barba</h3>
+    <p>Definizione, rifinitura e cura della barba.</p>
+    <div class="service-bottom"><span class="service-price">€20</span><span class="service-arrow">↗</span></div>
+   </article>
+   <article class="service-card">
+    <div class="service-number">SERVIZIO 03</div>
+    <div class="service-icon">B</div>
+    <h3>Taglio + barba</h3>
+    <p>Un servizio completo per un look curato in ogni dettaglio.</p>
+    <div class="service-bottom"><span class="service-price">€42</span><span class="service-arrow">↗</span></div>
+   </article>
+  </div>
+  <div class="service-note">Prezzi indicativi del concept dimostrativo.</div>
+ </div>
 </section>
 
-<!-- FILOSOFIA -->
-<section class="experience" id="esperienza">
-  <div class="container experience-grid">
-    <div>
-      <div class="section-kicker">La nostra filosofia</div>
-      <h2>Il piacere di<br>prendersi cura<br>di sé.</h2>
-
-      <p class="experience-copy">
-        Un buon servizio non si misura soltanto dal risultato
-        finale. Conta l'accoglienza, il tempo dedicato e la cura
-        con cui viene realizzato ogni particolare.
-        È questa l'idea alla base di BLACK LABEL.
-      </p>
-
-      <div class="features">
-        <div class="feature"><span>✦</span> Cura del dettaglio</div>
-        <div class="feature"><span>✦</span> Stile personale</div>
-        <div class="feature"><span>✦</span> Attenzione al cliente</div>
-        <div class="feature"><span>✦</span> Servizio su misura</div>
-      </div>
-    </div>
-
-    <div class="experience-image">
-      <img
-        src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1200&q=85"
-        alt="Dettaglio di un servizio barber"
-        onerror="this.style.display='none';this.parentElement.style.background='#B8B0A4'">
-    </div>
-  </div>
+<section class="feature" id="esperienza">
+ <div class="feature-image">
+  <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1300&q=85" alt="Dettaglio di un servizio barber">
+ </div>
+ <div class="feature-text">
+  <div class="section-label">L'esperienza BLACK LABEL</div>
+  <h2>Il tempo<br>dedicato a te.</h2>
+  <p>Non è soltanto una questione di estetica. È il piacere di fermarsi, prendersi cura di sé e uscire con la sensazione di essere esattamente come si desidera.</p>
+  <div class="feature-quote">“La differenza si vede nei dettagli.”</div>
+ </div>
 </section>
 
-<!-- GALLERIA -->
 <section class="gallery">
-  <div class="container">
-    <div class="gallery-header">
-      <div class="eyebrow">Dentro BLACK LABEL</div>
-      <h2 class="section-heading">Lo stile è nei dettagli.</h2>
-    </div>
-
-    <div class="gallery-grid">
-      <div class="gallery-photo">
-        <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=1200&q=85"
-          alt="Dettaglio di un taglio maschile"
-          onerror="this.style.display='none'">
-      </div>
-      <div class="gallery-photo">
-        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=900&q=85"
-          alt="Attrezzatura da barber"
-          onerror="this.style.display='none'">
-      </div>
-      <div class="gallery-photo">
-        <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=900&q=85"
-          alt="Lavorazione professionale"
-          onerror="this.style.display='none'">
-      </div>
-    </div>
+ <div class="wrap">
+  <div class="gallery-top">
+   <div class="section-label">BLACK LABEL</div>
+   <h2 class="section-title">La cura del dettaglio.</h2>
   </div>
+  <div class="gallery-grid">
+   <div class="gallery-cell"><img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=1200&q=85" alt="Taglio maschile"></div>
+   <div class="gallery-cell"><img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=900&q=85" alt="Strumenti barber"></div>
+   <div class="gallery-cell"><img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=900&q=85" alt="Servizio barber"></div>
+  </div>
+ </div>
 </section>
 
-<!-- PRENOTAZIONE -->
 <section class="booking" id="prenota">
-  <div class="container booking-grid">
-    <div class="booking-copy">
-      <div class="eyebrow">Il prossimo appuntamento</div>
-      <h2>Il tuo tempo.<br><em>Il tuo stile.</em></h2>
-
-      <p>
-        Scegli il servizio e inviaci una richiesta con il giorno
-        e l'orario che preferisci. Il nostro team potrà ricontattarti
-        per confermare l'appuntamento.
-      </p>
-
-      <div class="booking-contact">
-        <span>BLACK LABEL</span>
-        <strong>Barber Club · Su appuntamento</strong>
-      </div>
-    </div>
-
-    <div class="booking-form">
-      <div class="form-heading">
-        <strong>Richiedi un appuntamento</strong>
-        <span>Booking request</span>
-      </div>
-
-      <form id="bookingForm">
-        <div class="form-field">
-          <label for="service">Servizio desiderato</label>
-          <select id="service" name="service" required>
-            <option value="">Seleziona un servizio</option>
-            <option value="Taglio uomo — €28">Taglio uomo — €28</option>
-            <option value="Barba — €20">Barba — €20</option>
-            <option value="Taglio + barba — €42">Taglio + barba — €42</option>
-          </select>
-        </div>
-
-        <div class="form-row">
-          <div class="form-field">
-            <label for="date">Data preferita</label>
-            <input type="date" id="date" name="date" required>
-          </div>
-
-          <div class="form-field">
-            <label for="time">Orario preferito</label>
-            <select id="time" name="time" required>
-              <option value="">Scegli orario</option>
-              <option>09:00</option>
-              <option>09:30</option>
-              <option>10:00</option>
-              <option>10:30</option>
-              <option>11:00</option>
-              <option>11:30</option>
-              <option>12:00</option>
-              <option>12:30</option>
-              <option>14:00</option>
-              <option>14:30</option>
-              <option>15:00</option>
-              <option>15:30</option>
-              <option>16:00</option>
-              <option>16:30</option>
-              <option>17:00</option>
-              <option>17:30</option>
-              <option>18:00</option>
-              <option>18:30</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-field">
-          <label for="name">Nome e cognome</label>
-          <input type="text" id="name" name="name" placeholder="Inserisci il tuo nome" required>
-        </div>
-
-        <div class="form-field">
-          <label for="phone">Telefono</label>
-          <input type="tel" id="phone" name="phone" placeholder="Il tuo numero di telefono" required>
-        </div>
-
-        <button class="form-submit" type="submit">
-          Invia richiesta di appuntamento&nbsp; ↗
-        </button>
-
-        <div class="form-message" id="formMessage">
-          Questa è una richiesta dimostrativa: non è stata inviata
-          al barber shop. Per ricevere prenotazioni effettive occorre
-          collegare il modulo a un sistema di invio.
-        </div>
-      </form>
-    </div>
+ <div class="wrap booking-layout">
+  <div class="booking-info">
+   <div class="section-label">Prenota il tuo momento</div>
+   <h2>Ci vediamo<br>da <em>BLACK LABEL.</em></h2>
+   <p>Seleziona il trattamento e indicaci quando preferisci venire. Potrai inviare una richiesta di appuntamento.</p>
+   <div class="booking-meta">
+    <span>Il nostro studio</span>
+    <strong>BLACK LABEL · Barber Club</strong>
+   </div>
   </div>
-</section>
 
+  <div class="booking-form">
+   <div class="form-title">
+    <h3>Richiedi un appuntamento</h3>
+    <span>Appointment request</span>
+   </div>
+   <form id="bookingForm">
+    <div class="field">
+     <label for="service">Il servizio che desideri</label>
+     <select id="service" required>
+      <option value="">Seleziona un servizio</option>
+      <option>Taglio uomo — €28</option>
+      <option>Barba — €20</option>
+      <option>Taglio + barba — €42</option>
+     </select>
+    </div>
+    <div class="fields-two">
+     <div class="field">
+      <label for="date">Data preferita</label>
+      <input type="date" id="date" required>
+     </div>
+     <div class="field">
+      <label for="time">Orario preferito</label>
+      <select id="time" required>
+       <option value="">Seleziona</option>
+       <option>09:00</option><option>09:30</option>
+       <option>10:00</option><option>10:30</option>
+       <option>11:00</option><option>11:30</option>
+       <option>12:00</option><option>12:30</option>
+       <option>14:00</option><option>14:30</option>
+       <option>15:00</option><option>15:30</option>
+       <option>16:00</option><option>16:30</option>
+       <option>17:00</option><option>17:30</option>
+       <option>18:00</option><option>18:30</option>
+      </select>
+     </div>
+    </div>
+    <div class="field">
+     <label for="name">Nome e cognome</label>
+     <input id="name" type="text" placeholder="Il tuo nome" required>
+    </div>
+    <div class="field">
+     <label for="phone">Numero di telefono</label>
+     <input id="phone" type="tel" placeholder="Il tuo recapito" required>
+    </div>
+    <button class="submit" type="submit">Invia richiesta di appuntamento ↗</button>
+    <div class="notice" id="notice">Modulo dimostrativo: la richiesta non è stata inviata. Per ricevere prenotazioni reali occorre collegare il modulo a un servizio di invio.</div>
+   </form>
+  </div>
+ </div>
+</section>
 </main>
 
 <footer>
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">BLACK <span>LABEL</span></div>
-      <nav class="footer-nav">
-        <a href="#studio">Lo studio</a>
-        <a href="#servizi">Servizi</a>
-        <a href="#esperienza">Filosofia</a>
-        <a href="#prenota">Prenotazioni</a>
-      </nav>
-    </div>
-
-    <div class="footer-bottom">
-      <span>© 2026 BLACK LABEL BARBER CLUB</span>
-      <span>Concept website · Portfolio STUDIO WEB</span>
-    </div>
+ <div class="wrap">
+  <div class="footer-main">
+   <div class="footer-logo">BLACK <span>LABEL</span></div>
+   <div class="footer-links">
+    <a href="#studio">Lo studio</a>
+    <a href="#servizi">Servizi</a>
+    <a href="#esperienza">Esperienza</a>
+    <a href="#prenota">Prenota</a>
+   </div>
   </div>
+  <div class="footer-bottom">
+   <span>© 2026 BLACK LABEL BARBER CLUB</span>
+   <span>Concept dimostrativo · Portfolio STUDIO WEB</span>
+  </div>
+ </div>
 </footer>
 
 <script>
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
-
-menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("open");
-  menuToggle.textContent = navLinks.classList.contains("open") ? "✕" : "☰";
+const menu=document.getElementById("menu");
+const nav=document.getElementById("navigation");
+menu.addEventListener("click",()=>{
+ nav.classList.toggle("open");
+ menu.textContent=nav.classList.contains("open")?"✕":"☰";
 });
-
-navLinks.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("open");
-    menuToggle.textContent = "☰";
-  });
-});
-
-const dateInput = document.getElementById("date");
-const now = new Date();
-const localDate = new Date(now.getTime() - now.getTimezoneOffset() * 60000)
-  .toISOString().split("T")[0];
-
-dateInput.min = localDate;
-
-document.getElementById("bookingForm").addEventListener("submit", function(event) {
-  event.preventDefault();
-  document.getElementById("formMessage").style.display = "block";
+nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{
+ nav.classList.remove("open");
+ menu.textContent="☰";
+}));
+const date=document.getElementById("date");
+const today=new Date();
+date.min=new Date(today.getTime()-today.getTimezoneOffset()*60000).toISOString().slice(0,10);
+document.getElementById("bookingForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ document.getElementById("notice").style.display="block";
 });
 </script>
-
 </body>
 </html>
