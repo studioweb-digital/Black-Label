@@ -3,539 +3,453 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#211b18">
-<title>BLACK LABEL — Barber Shop</title>
-<meta name="description" content="BLACK LABEL Barber Shop. Taglio uomo, barba e grooming. Prenota il tuo appuntamento.">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#171717">
+<title>BLACK LABEL | Barber Shop</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --dark:#211b18;
-  --dark2:#302721;
-  --cream:#f5f0e8;
-  --paper:#eae2d6;
-  --sand:#c8b8a4;
-  --gold:#b69a73;
-  --text:#28221e;
-  --muted:#82776d;
-  --white:#fffdf9;
+:root{
+ --black:#171717;--dark:#202020;--panel:#292929;
+ --white:#f5f3ef;--paper:#eae7e1;--copper:#c66e48;
+ --muted:#a7a39e;--line:#41403e;
 }
-*{margin:0;padding:0;box-sizing:border-box}
+*{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text)}
+body{background:var(--white);color:var(--black);font-family:'DM Sans',sans-serif}
 a{text-decoration:none;color:inherit}
 button,input,select{font:inherit}
 button{cursor:pointer}
-img{display:block;width:100%;object-fit:cover}
-.container{width:min(1180px,90%);margin:auto}
-.eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700}
-.section-title{font-family:'Playfair Display',serif;font-size:clamp(38px,5vw,65px);font-weight:500;line-height:1.08;letter-spacing:-1.5px}
-.section-copy{color:var(--muted);font-size:14px;line-height:1.9}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:15px;padding:16px 24px;background:var(--gold);color:#211b18;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700;border:1px solid var(--gold);transition:.25s}
-.btn:hover{background:transparent;color:var(--gold)}
-.btn-dark{background:var(--dark);border-color:var(--dark);color:var(--cream)}
-.btn-dark:hover{color:var(--dark);background:transparent}
-.btn-outline{background:transparent;color:var(--cream);border-color:rgba(255,255,255,.4)}
-.btn-outline:hover{background:var(--cream);color:var(--dark)}
-/* HEADER */
-header{height:82px;background:var(--dark);color:var(--cream);display:flex;align-items:center;position:relative;z-index:10}
-.nav{display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:12px}
-.brand-mark{width:39px;height:39px;border:1px solid var(--gold);display:grid;place-items:center;font-family:'Playfair Display',serif;color:var(--gold);font-size:21px}
-.brand-name{font-family:'Playfair Display',serif;font-size:20px;letter-spacing:3px}
-.brand-sub{display:block;font-size:8px;letter-spacing:3px;color:#b9aa99;margin-top:3px}
-.nav-links{display:flex;gap:34px;align-items:center}
-.nav-links a{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#e0d8ce;transition:.2s}
-.nav-links a:hover{color:var(--gold)}
-.nav-cta{border:1px solid var(--gold);padding:12px 17px;color:var(--gold)!important}
-.menu-toggle{display:none;background:none;border:0;color:var(--cream);font-size:25px}
+img{width:100%;display:block;object-fit:cover}
+.wrap{width:min(1200px,90%);margin:auto}
+.display{font-family:'Oswald',sans-serif;text-transform:uppercase;font-weight:500;line-height:.95;letter-spacing:-1px}
+.kicker{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--copper)}
+.button{display:inline-flex;justify-content:center;align-items:center;gap:20px;background:var(--copper);color:white;border:1px solid var(--copper);padding:17px 23px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;transition:.2s}
+.button:hover{background:transparent;color:var(--copper)}
+.button.light{background:var(--white);color:var(--black);border-color:var(--white)}
+.button.light:hover{background:transparent;color:var(--white)}
+/* NAV */
+header{height:82px;background:var(--black);color:white;display:flex;align-items:center;position:relative;z-index:20}
+.nav{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Oswald',sans-serif;font-size:27px;letter-spacing:2px;font-weight:600}
+.logo span{color:var(--copper)}
+.navlinks{display:flex;align-items:center;gap:35px}
+.navlinks a{font-size:11px;color:#d3d0cb;transition:.2s}
+.navlinks a:hover{color:var(--copper)}
+.navlinks .navbook{padding:12px 18px;border:1px solid var(--copper);color:white}
+.mobile{display:none;background:none;border:0;color:white;font-size:25px}
 /* HERO */
-.hero{min-height:660px;background:var(--dark);position:relative;color:var(--cream);overflow:hidden}
-.hero-image{position:absolute;inset:0 0 0 40%;background:
-linear-gradient(90deg,#211b18 0%,rgba(33,27,24,.45) 35%,rgba(33,27,24,.05) 100%),
-url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1900&q=85') center/cover}
-.hero-inner{position:relative;z-index:1;min-height:660px;display:flex;align-items:center}
-.hero-content{max-width:620px;padding:80px 0}
-.hero h1{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(62px,9vw,112px);line-height:.95;letter-spacing:-4px;margin:22px 0}
-.hero h1 span{color:var(--gold);font-style:italic}
-.hero-description{max-width:390px;color:#c9bfb4;font-size:14px;line-height:1.9;margin-bottom:32px}
-.hero-actions{display:flex;gap:13px;flex-wrap:wrap}
-.hero-note{margin-top:65px;display:flex;align-items:center;gap:14px;color:#b6a99b;font-size:10px;letter-spacing:1.5px;text-transform:uppercase}
-.hero-note:before{content:"";width:42px;height:1px;background:var(--gold)}
-/* INTRO STRIP */
-.strip{background:var(--gold);padding:19px 0;color:var(--dark)}
-.strip-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.strip span{font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700}
+.hero{background:var(--black);color:white;min-height:690px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;min-height:690px}
+.hero-copy{padding:100px 7vw 80px max(5vw,calc((100vw - 1200px)/2));display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
+.hero h1{font-size:clamp(70px,9vw,130px);margin:25px 0 30px}
+.hero h1 span{color:var(--copper)}
+.hero-copy p{font-size:15px;line-height:1.8;color:#c3c0bb;max-width:390px;margin-bottom:35px}
+.hero-photo{position:relative;min-height:690px}
+.hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--black),transparent 35%),linear-gradient(0deg,rgba(0,0,0,.15),transparent)}
+.hero-photo img{height:100%;position:absolute;inset:0}
+.hero-bottom{position:absolute;bottom:30px;left:0;right:0;z-index:3;color:#c4beb7;font-size:10px;letter-spacing:2px;text-transform:uppercase}
+/* TRUST BAR */
+.info-bar{background:var(--copper);color:white;padding:20px 0}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);text-align:center}
+.info-grid div{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-right:1px solid rgba(255,255,255,.3)}
+.info-grid div:last-child{border:0}
 /* INTRO */
-.intro{padding:120px 0}
-.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center}
-.intro-photos{position:relative;padding:0 55px 55px 0}
-.intro-photos img{height:500px}
-.intro-photos .small-photo{position:absolute;width:47%;height:225px;right:0;bottom:0;border:9px solid var(--cream)}
-.intro-text .section-title{margin:20px 0 25px}
-.intro-text .section-copy{max-width:460px}
-.intro-signature{margin-top:32px;display:flex;align-items:center;gap:16px}
-.signature-line{width:40px;height:1px;background:var(--gold)}
-.intro-signature span{font-family:'Playfair Display',serif;font-size:19px;font-style:italic}
+.intro{padding:120px 0;background:var(--white)}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:85px;align-items:center}
+.intro-image{height:540px;position:relative}
+.intro-image img{height:100%}
+.image-label{position:absolute;bottom:20px;left:20px;background:var(--copper);color:white;padding:15px 20px;font-family:'Oswald';font-size:17px;text-transform:uppercase;letter-spacing:1px}
+.intro-copy h2{font-size:clamp(45px,6vw,75px);margin:20px 0 25px}
+.intro-copy p{font-size:15px;color:#69645f;line-height:1.9;max-width:450px}
+.intro-copy .button{margin-top:30px}
 /* SERVICES */
-.services{background:var(--dark);color:var(--cream);padding:110px 0}
-.services-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:65px}
-.services-head .section-title{margin-top:17px}
-.services-head p{max-width:300px;color:#b8ada2;font-size:13px;line-height:1.8}
-.service-list{border-top:1px solid #51443a}
-.service-row{display:grid;grid-template-columns:65px 1fr 130px 100px;gap:20px;align-items:center;padding:25px 8px;border-bottom:1px solid #51443a;transition:.25s}
-.service-row:hover{background:#2c241f;padding-left:20px}
-.service-number{font-family:'Playfair Display',serif;color:var(--gold);font-size:17px}
-.service-name{font-family:'Playfair Display',serif;font-size:25px}
-.service-detail{font-size:11px;color:#aa9d91;margin-top:6px}
-.service-duration{font-size:11px;color:#b8ada2}
-.service-price{font-family:'Playfair Display',serif;font-size:25px;color:var(--gold);text-align:right}
-.services-bottom{margin-top:35px;display:flex;justify-content:space-between;align-items:center;gap:20px}
-.services-bottom p{color:#b8ada2;font-size:11px;line-height:1.8}
-/* EXPERIENCE */
-.experience{display:grid;grid-template-columns:1fr 1fr;background:var(--paper)}
-.experience-image{min-height:570px;background:url('https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1200&q=85') center/cover}
-.experience-content{padding:100px clamp(35px,8vw,120px);display:flex;flex-direction:column;justify-content:center}
-.experience-content .section-title{margin:20px 0}
-.experience-content .section-copy{margin-bottom:30px}
-.experience-points{display:grid;gap:18px;margin:5px 0 35px}
-.experience-point{display:flex;gap:15px;align-items:center;font-size:12px}
-.point-number{width:28px;height:28px;border:1px solid var(--gold);display:grid;place-items:center;color:#92754f;font-family:'Playfair Display',serif}
+.services{background:var(--paper);padding:110px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:50px;gap:30px}
+.section-head h2{font-size:clamp(45px,6vw,76px);margin-top:16px}
+.section-head p{font-size:13px;color:#716c66;max-width:280px;line-height:1.8}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.service-card{background:var(--white);padding:32px 28px;min-height:280px;display:flex;flex-direction:column;justify-content:space-between;transition:.25s}
+.service-card:hover{background:var(--black);color:white;transform:translateY(-5px)}
+.service-card .num{font-family:'Oswald';font-size:14px;color:var(--copper)}
+.service-card h3{font-family:'Oswald';font-size:30px;font-weight:500;text-transform:uppercase;margin:25px 0 10px}
+.service-card p{font-size:12px;color:#77716b;line-height:1.7}
+.service-card:hover p{color:#c2bdb7}
+.service-bottom{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #d9d3ca;padding-top:20px;margin-top:30px}
+.service-card:hover .service-bottom{border-color:#555}
+.price{font-family:'Oswald';font-size:32px;color:var(--copper)}
+.duration{font-size:10px;color:#8d877f}
+/* FULL WIDTH STATEMENT */
+.statement{background:var(--black);color:white;display:grid;grid-template-columns:1.1fr .9fr;min-height:480px}
+.statement-image{min-height:480px}
+.statement-image img{height:100%}
+.statement-copy{padding:80px clamp(35px,7vw,100px);display:flex;flex-direction:column;justify-content:center}
+.statement-copy h2{font-size:clamp(43px,5vw,68px);margin:20px 0}
+.statement-copy p{font-size:14px;line-height:1.9;color:#bcb7b1;max-width:390px;margin-bottom:30px}
 /* GALLERY */
 .gallery{padding:110px 0}
-.gallery-heading{text-align:center;margin-bottom:50px}
-.gallery-heading .section-title{margin-top:15px}
-.gallery-grid{display:grid;grid-template-columns:1.15fr .85fr 1fr;gap:16px;height:410px}
-.gallery-grid img{height:100%;transition:transform .5s}
+.gallery-head{text-align:center;margin-bottom:45px}
+.gallery-head h2{font-size:clamp(45px,6vw,70px);margin-top:15px}
+.gallery-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:14px;height:390px}
+.gallery-grid img{height:100%;transition:.4s}
 .gallery-grid div{overflow:hidden}
 .gallery-grid div:hover img{transform:scale(1.04)}
-.gallery-grid .gallery-middle{display:grid;grid-template-rows:1fr 1fr;gap:16px}
-.gallery-middle img{min-height:0}
 /* BOOKING */
-.booking{background:var(--paper);padding:110px 0}
-.booking-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:start}
-.booking-intro .section-title{margin:18px 0 23px}
-.booking-intro .section-copy{max-width:350px}
-.booking-contact{margin-top:40px;border-top:1px solid #d2c6b7;padding-top:25px}
-.booking-contact p{font-size:11px;color:var(--muted);line-height:2}
-.booking-contact strong{color:var(--text);font-weight:600}
-.booking-card{background:var(--white);padding:40px;box-shadow:0 18px 55px rgba(50,37,27,.07)}
-.booking-progress{display:flex;gap:7px;margin-bottom:30px}
-.progress-line{height:3px;background:#e4ddd4;flex:1}
-.progress-line.active{background:var(--gold)}
-.step-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:700}
-.booking-card h3{font-family:'Playfair Display',serif;font-size:30px;font-weight:500;margin:10px 0 25px}
-.choice-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.choice{border:1px solid #e4ddd4;background:transparent;padding:16px;text-align:left;transition:.2s;color:var(--text)}
-.choice:hover,.choice.selected{border-color:var(--gold);background:#f8f3eb}
-.choice strong{display:block;font-family:'Playfair Display',serif;font-size:18px;font-weight:500}
-.choice small{display:block;color:var(--muted);font-size:10px;margin-top:6px}
-.choice .choice-price{float:right;color:#987a51;font-family:'Playfair Display',serif;font-size:17px}
-.field{margin-bottom:17px}
-.field label{display:block;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#75695f;margin-bottom:8px}
-.field input,.field select{width:100%;padding:14px;border:1px solid #ded5ca;background:#fffdf9;outline:none;color:var(--text);font-size:13px}
-.field input:focus,.field select:focus{border-color:var(--gold)}
-.field-row{display:grid;grid-template-columns:1fr 1fr;gap:13px}
-.time-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.time-choice{border:1px solid #ded5ca;padding:12px 5px;text-align:center;font-size:12px;background:white}
-.time-choice.selected{background:var(--dark);color:var(--cream);border-color:var(--dark)}
-.booking-actions{display:flex;justify-content:space-between;align-items:center;margin-top:28px;gap:10px}
-.booking-actions button{min-width:120px}
-.back-btn{border:0;background:none;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:1px}
-.booking-error{color:#a33b30;font-size:11px;margin-top:12px;min-height:16px}
-.summary-box{background:#f4eee5;padding:18px;margin-top:20px;font-size:12px;line-height:2;color:#6e6258}
-.summary-box strong{color:var(--text)}
-.success-message{text-align:center;padding:35px 10px}
-.success-icon{width:55px;height:55px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;margin:0 auto 20px;color:#92754f;font-size:25px}
-.success-message h3{font-size:32px;margin-bottom:12px}
-.success-message p{font-size:13px;color:var(--muted);line-height:1.8}
+.booking{background:#1d1d1d;color:white;padding:110px 0}
+.booking-heading{text-align:center;margin-bottom:50px}
+.booking-heading h2{font-size:clamp(48px,7vw,82px);margin:18px 0}
+.booking-heading p{font-size:13px;color:#b7b2ac}
+.booking-box{background:#f5f3ef;color:var(--black);max-width:920px;margin:auto;padding:42px;display:grid;grid-template-columns:.9fr 1.1fr;gap:40px}
+.booking-left{background:#242424;color:white;padding:30px;display:flex;flex-direction:column;justify-content:space-between}
+.booking-left h3{font-family:'Oswald';font-size:38px;font-weight:500;text-transform:uppercase;line-height:1.05;margin:20px 0}
+.booking-left p{font-size:12px;color:#bdb8b1;line-height:1.8}
+.booking-left .booking-contact{font-size:11px;color:#bdb8b1;line-height:2;margin-top:45px}
+.booking-form h3{font-family:'Oswald';font-size:29px;font-weight:500;text-transform:uppercase;margin-bottom:22px}
+.form-label{font-size:10px;letter-spacing:1px;text-transform:uppercase;font-weight:700;display:block;margin:22px 0 10px}
+.service-options{display:grid;gap:8px}
+.service-option{display:flex;justify-content:space-between;align-items:center;border:1px solid #d8d2ca;background:white;padding:13px 15px;text-align:left;color:var(--black);transition:.2s}
+.service-option strong{font-size:13px;font-weight:600}
+.service-option span{font-family:'Oswald';font-size:20px;color:var(--copper)}
+.service-option.selected{border:2px solid var(--copper);background:#fffaf5;padding:12px 14px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field label{display:block;font-size:10px;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;color:#625d57}
+.field input,.field select{width:100%;height:46px;padding:0 12px;border:1px solid #d8d2ca;background:white;color:#242424;outline:none;font-size:12px}
+.field input:focus,.field select:focus{border-color:var(--copper)}
+.times{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
+.time{padding:11px 3px;border:1px solid #d8d2ca;background:white;font-size:11px;color:#333}
+.time.selected{background:var(--black);color:white;border-color:var(--black)}
+.booking-submit{width:100%;margin-top:23px}
+.form-error{color:#a33b30;font-size:11px;margin-top:10px;min-height:14px}
+.booking-note{font-size:10px;color:#888079;line-height:1.6;margin-top:15px}
+.confirmation{text-align:center;padding:45px 10px}
+.confirmation h3{font-family:'Oswald';font-size:35px;text-transform:uppercase;margin:20px 0}
+.confirmation p{font-size:13px;color:#716c66;line-height:1.8}
 /* FOOTER */
-footer{background:var(--dark);color:var(--cream);padding:65px 0 25px}
-.footer-top{display:flex;justify-content:space-between;align-items:start;gap:40px;padding-bottom:55px}
-.footer-brand p{font-size:11px;color:#b6a99b;line-height:1.8;margin-top:17px;max-width:260px}
-.footer-links{display:flex;gap:65px}
-.footer-column h4{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
-.footer-column a,.footer-column p{display:block;font-size:11px;color:#c5b9ad;margin:11px 0}
-.footer-bottom{border-top:1px solid #51443a;padding-top:22px;display:flex;justify-content:space-between;gap:20px;color:#95877a;font-size:9px;letter-spacing:1px;text-transform:uppercase}
-@media(max-width:850px){
- .nav-links{gap:16px}
+footer{background:#111;color:white;padding:65px 0 25px}
+.footer-main{display:flex;justify-content:space-between;gap:30px;padding-bottom:45px}
+.footer-logo{font-family:'Oswald';font-size:30px;letter-spacing:2px}
+.footer-logo span{color:var(--copper)}
+.footer-main p{font-size:12px;color:#a9a39c;line-height:1.9;margin-top:12px}
+.footer-links{display:flex;gap:70px}
+.footer-links h4{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--copper);margin-bottom:17px}
+.footer-links a,.footer-links p{display:block;font-size:11px;color:#c5c0b9;margin:10px 0}
+.footer-bottom{border-top:1px solid #393633;padding-top:20px;display:flex;justify-content:space-between;gap:20px;color:#827d77;font-size:10px}
+@media(max-width:800px){
+ .hero-copy{padding-left:5vw}
  .intro-grid{gap:40px}
- .booking-layout{gap:35px}
- .experience-content{padding:65px 40px}
+ .booking-box{gap:20px;padding:25px}
+ .booking-left{padding:22px}
+ .footer-links{gap:35px}
 }
 @media(max-width:650px){
- header{height:72px}
- .menu-toggle{display:block}
- .nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:var(--dark);padding:25px 5%;flex-direction:column;align-items:stretch;gap:23px;border-top:1px solid #51443a}
- .nav-links.open{display:flex}
- .nav-cta{text-align:center}
- .hero,.hero-inner{min-height:650px}
- .hero-image{inset:0;background:linear-gradient(90deg,rgba(33,27,24,.91),rgba(33,27,24,.58)),url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1100&q=85') center/cover}
- .hero h1{font-size:67px;letter-spacing:-2px}
- .hero-content{padding:65px 0}
- .hero-note{margin-top:45px}
- .strip-inner{justify-content:center;text-align:center;gap:13px 24px}
- .strip span{font-size:8px}
- .intro{padding:75px 0}
- .intro-grid{grid-template-columns:1fr;gap:45px}
- .intro-photos{padding:0 35px 35px 0}
- .intro-photos img{height:370px}
- .intro-photos .small-photo{height:155px;border-width:6px}
- .services{padding:75px 0}
- .services-head{display:block}
- .services-head p{margin-top:20px}
- .service-row{grid-template-columns:30px 1fr 65px;gap:10px;padding:20px 0}
- .service-name{font-size:19px}
- .service-duration{display:none}
- .service-price{font-size:21px}
- .service-detail{font-size:9px}
- .services-bottom{align-items:flex-start;flex-direction:column}
- .experience{grid-template-columns:1fr}
- .experience-image{min-height:350px}
- .experience-content{padding:70px 8%}
- .gallery{padding:75px 0}
+ header{height:70px}
+ .mobile{display:block}
+ .navlinks{display:none;position:absolute;top:70px;left:0;right:0;background:#171717;padding:25px 5%;flex-direction:column;align-items:stretch;gap:23px}
+ .navlinks.open{display:flex}
+ .navlinks .navbook{text-align:center}
+ .hero-grid{grid-template-columns:1fr;min-height:720px}
+ .hero-copy{padding:85px 7% 70px;min-height:480px}
+ .hero h1{font-size:83px}
+ .hero-photo{position:absolute;inset:0;opacity:.35;min-height:100%}
+ .hero-photo:after{background:linear-gradient(90deg,rgba(23,23,23,.9),rgba(23,23,23,.2)),linear-gradient(0deg,#171717,transparent 70%)}
+ .hero-copy{z-index:2}
+ .hero-bottom{display:none}
+ .info-grid{gap:10px}
+ .info-grid div{font-size:9px;line-height:1.5}
+ .intro,.services,.gallery,.booking{padding:75px 0}
+ .intro-grid{grid-template-columns:1fr;gap:35px}
+ .intro-image{height:390px}
+ .intro-copy h2{font-size:57px}
+ .section-head{display:block}
+ .section-head p{margin-top:20px}
+ .service-grid{grid-template-columns:1fr}
+ .service-card{min-height:220px}
+ .statement{grid-template-columns:1fr}
+ .statement-image{min-height:320px;height:320px}
+ .statement-copy{padding:60px 7%}
  .gallery-grid{height:auto;grid-template-columns:1fr 1fr;gap:10px}
- .gallery-grid>div:first-child{grid-column:1/-1;height:260px}
- .gallery-grid>div:nth-child(2),.gallery-grid>div:nth-child(3){height:190px}
- .gallery-grid .gallery-middle{display:block}
- .gallery-middle img:nth-child(2){display:none}
- .booking{padding:75px 0}
- .booking-layout{grid-template-columns:1fr;gap:35px}
- .booking-card{padding:24px 18px}
- .choice-grid{grid-template-columns:1fr 1fr}
- .choice{padding:13px 10px}
- .choice strong{font-size:16px}
- .field-row{grid-template-columns:1fr}
- .time-grid{grid-template-columns:repeat(3,1fr)}
- .footer-top{flex-direction:column}
- .footer-links{gap:35px;flex-wrap:wrap}
+ .gallery-grid div:first-child{grid-column:1/-1;height:260px}
+ .gallery-grid div:nth-child(2),.gallery-grid div:nth-child(3){height:180px}
+ .booking-box{grid-template-columns:1fr;padding:15px;gap:20px}
+ .booking-left{min-height:220px}
+ .booking-left .booking-contact{margin-top:20px}
+ .booking-form{padding:12px 5px 15px}
+ .form-row{grid-template-columns:1fr}
+ .times{grid-template-columns:repeat(4,1fr)}
+ .footer-main{flex-direction:column}
+ .footer-links{gap:40px}
  .footer-bottom{flex-direction:column}
 }
 </style>
 </head>
-
 <body>
+
 <header>
-  <div class="container nav">
-    <a class="brand" href="#home">
-      <div class="brand-mark">B</div>
-      <div>
-        <div class="brand-name">BLACK LABEL</div>
-        <span class="brand-sub">BARBER SHOP</span>
-      </div>
-    </a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Apri menu">☰</button>
-    <nav class="nav-links" id="navLinks">
-      <a href="#home">Home</a>
-      <a href="#servizi">Servizi</a>
-      <a href="#esperienza">Il negozio</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#prenota" class="nav-cta">Prenota ora</a>
-    </nav>
-  </div>
+ <div class="wrap nav">
+  <a class="logo" href="#home">BLACK<span>LABEL.</span></a>
+  <button class="mobile" id="mobileMenu" aria-label="Apri menu">☰</button>
+  <nav class="navlinks" id="navlinks">
+   <a href="#home">Home</a>
+   <a href="#servizi">Servizi</a>
+   <a href="#negozio">Il negozio</a>
+   <a href="#gallery">Gallery</a>
+   <a class="navbook" href="#prenota">Prenota</a>
+  </nav>
+ </div>
 </header>
 
 <main>
 <section class="hero" id="home">
-  <div class="hero-image"></div>
-  <div class="container hero-inner">
-    <div class="hero-content">
-      <div class="eyebrow">Il piacere di prendersi cura di sé</div>
-      <h1>Il tuo stile.<br><span>La tua firma.</span></h1>
-      <p class="hero-description">Taglio, barba e cura personale. Un barber shop dove ogni dettaglio conta e il tuo stile trova la sua espressione migliore.</p>
-      <div class="hero-actions">
-        <a class="btn" href="#prenota">Prenota un appuntamento <span>↗</span></a>
-        <a class="btn btn-outline" href="#servizi">Scopri i servizi</a>
-      </div>
-      <div class="hero-note">Precisione · Stile · Personalità</div>
-    </div>
+ <div class="hero-grid">
+  <div class="hero-copy">
+   <div class="kicker">BLACK LABEL · BARBER SHOP</div>
+   <h1 class="display">YOUR<br>STYLE.<br><span>YOUR</span><br>RULES.</h1>
+   <p>Un taglio preciso. Una barba curata. Uno stile che parla di te. Entra, accomodati e lascia spazio alla tua personalità.</p>
+   <div><a href="#prenota" class="button">Prenota il tuo appuntamento <span>↗</span></a></div>
   </div>
+  <div class="hero-photo">
+   <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1500&q=85" alt="Interno di un barber shop">
+  </div>
+ </div>
 </section>
 
-<div class="strip">
-  <div class="container strip-inner">
-    <span>✦ Taglio su misura</span>
-    <span>✦ Cura della barba</span>
-    <span>✦ Attenzione ai dettagli</span>
-    <span>✦ Il tuo momento</span>
-  </div>
+<div class="info-bar">
+ <div class="wrap info-grid">
+  <div>Taglio uomo</div>
+  <div>Cura della barba</div>
+  <div>Stile personale</div>
+ </div>
 </div>
 
 <section class="intro">
-  <div class="container intro-grid">
-    <div class="intro-photos">
-      <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1000&q=85" alt="Barbiere al lavoro durante un taglio" loading="lazy">
-      <img class="small-photo" src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=700&q=85" alt="Dettaglio di un taglio professionale" loading="lazy">
-    </div>
-    <div class="intro-text">
-      <div class="eyebrow">Benvenuto da Black Label</div>
-      <h2 class="section-title">Non è solo un taglio.<br>È il tuo stile.</h2>
-      <p class="section-copy">Crediamo che un buon taglio faccia la differenza. Per questo dedichiamo tempo, attenzione e precisione a ogni appuntamento, partendo da ciò che ti valorizza davvero.</p>
-      <p class="section-copy" style="margin-top:15px">Dalla sfumatura più pulita alla barba curata nei minimi dettagli, ogni servizio è pensato per farti uscire dal negozio con una sola sensazione: sentirti al meglio.</p>
-      <div class="intro-signature"><div class="signature-line"></div><span>Il dettaglio fa lo stile.</span></div>
-    </div>
+ <div class="wrap intro-grid">
+  <div class="intro-image">
+   <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1100&q=85" alt="Barbiere durante un taglio">
+   <div class="image-label">Il tuo stile, senza compromessi.</div>
   </div>
+  <div class="intro-copy">
+   <div class="kicker">Il modo Black Label</div>
+   <h2 class="display">FATTO<br>COME SI DEVE.</h2>
+   <p>Non esistono due clienti uguali. Per questo ogni taglio parte da una scelta condivisa: ascoltiamo quello che cerchi, valutiamo cosa ti valorizza e lavoriamo con attenzione fino all'ultimo dettaglio.</p>
+   <a href="#servizi" class="button">Scopri i servizi ↗</a>
+  </div>
+ </div>
 </section>
 
 <section class="services" id="servizi">
-  <div class="container">
-    <div class="services-head">
-      <div>
-        <div class="eyebrow">Il nostro listino</div>
-        <h2 class="section-title">Scegli il tuo<br>prossimo look.</h2>
-      </div>
-      <p>Ogni servizio inizia con l'ascolto delle tue esigenze e termina con la cura di ogni dettaglio.</p>
-    </div>
-
-    <div class="service-list">
-      <div class="service-row">
-        <div class="service-number">01</div>
-        <div><div class="service-name">Taglio uomo</div><div class="service-detail">Consulenza, taglio e styling finale</div></div>
-        <div class="service-duration">30 min</div>
-        <div class="service-price">€25</div>
-      </div>
-      <div class="service-row">
-        <div class="service-number">02</div>
-        <div><div class="service-name">Taglio + Barba</div><div class="service-detail">Il servizio completo per il tuo look</div></div>
-        <div class="service-duration">50 min</div>
-        <div class="service-price">€35</div>
-      </div>
-      <div class="service-row">
-        <div class="service-number">03</div>
-        <div><div class="service-name">Barba</div><div class="service-detail">Definizione, rifinitura e trattamento</div></div>
-        <div class="service-duration">25 min</div>
-        <div class="service-price">€18</div>
-      </div>
-      <div class="service-row">
-        <div class="service-number">04</div>
-        <div><div class="service-name">Sfumatura</div><div class="service-detail">Precisione e pulizia delle linee</div></div>
-        <div class="service-duration">35 min</div>
-        <div class="service-price">€25</div>
-      </div>
-      <div class="service-row">
-        <div class="service-number">05</div>
-        <div><div class="service-name">Shampoo & Styling</div><div class="service-detail">Detersione e messa in piega</div></div>
-        <div class="service-duration">20 min</div>
-        <div class="service-price">€15</div>
-      </div>
-    </div>
-
-    <div class="services-bottom">
-      <p>I prezzi indicati sono dimostrativi e possono essere personalizzati.<br>Per informazioni sui servizi, contattaci direttamente.</p>
-      <a class="btn" href="#prenota">Prenota il tuo servizio ↗</a>
-    </div>
+ <div class="wrap">
+  <div class="section-head">
+   <div>
+    <div class="kicker">Il listino</div>
+    <h2 class="display">TRE SERVIZI.<br>ZERO COMPROMESSI.</h2>
+   </div>
+   <p>Quello che serve per sentirti a posto. Scegli il tuo servizio e prenota il momento giusto.</p>
   </div>
+  <div class="service-grid">
+   <article class="service-card">
+    <div>
+     <div class="num">01 / CAPELLI</div>
+     <h3>Taglio uomo</h3>
+     <p>Taglio personalizzato, rifinitura e styling finale.</p>
+    </div>
+    <div class="service-bottom"><span class="price">€28</span><span class="duration">30 MINUTI</span></div>
+   </article>
+   <article class="service-card">
+    <div>
+     <div class="num">02 / BARBA</div>
+     <h3>Barba</h3>
+     <p>Regolazione, definizione dei contorni e cura.</p>
+    </div>
+    <div class="service-bottom"><span class="price">€20</span><span class="duration">25 MINUTI</span></div>
+   </article>
+   <article class="service-card">
+    <div>
+     <div class="num">03 / TOTAL LOOK</div>
+     <h3>Taglio + Barba</h3>
+     <p>Il servizio completo per un look curato dalla testa alla barba.</p>
+    </div>
+    <div class="service-bottom"><span class="price">€42</span><span class="duration">50 MINUTI</span></div>
+   </article>
+  </div>
+ </div>
 </section>
 
-<section class="experience" id="esperienza">
-  <div class="experience-image" role="img" aria-label="Ambiente di barber shop"></div>
-  <div class="experience-content">
-    <div class="eyebrow">Un ambiente pensato per te</div>
-    <h2 class="section-title">Prenditi il tempo.<br>Al resto pensiamo noi.</h2>
-    <p class="section-copy">Un ambiente curato, strumenti professionali e persone che conoscono il valore di un lavoro fatto bene. Qui puoi staccare dalla routine e dedicarti a te stesso.</p>
-    <div class="experience-points">
-      <div class="experience-point"><span class="point-number">01</span> Ascoltiamo il look che desideri</div>
-      <div class="experience-point"><span class="point-number">02</span> Lavoriamo con precisione e cura</div>
-      <div class="experience-point"><span class="point-number">03</span> Rifiniamo ogni dettaglio</div>
-    </div>
-    <a href="#prenota" class="btn btn-dark">Vieni a trovarci ↗</a>
-  </div>
+<section class="statement" id="negozio">
+ <div class="statement-image">
+  <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1200&q=85" alt="Lavoro di precisione dal barbiere">
+ </div>
+ <div class="statement-copy">
+  <div class="kicker">Il tuo spazio</div>
+  <h2 class="display">SIEDITI.<br>RILASSATI.<br>ESCI AL TOP.</h2>
+  <p>Un ambiente contemporaneo, un servizio attento e il tempo necessario per fare le cose bene. Il tuo appuntamento è il tuo momento.</p>
+  <a href="#prenota" class="button light">Vieni a trovarci ↗</a>
+ </div>
 </section>
 
 <section class="gallery" id="gallery">
-  <div class="container">
-    <div class="gallery-heading">
-      <div class="eyebrow">Dentro Black Label</div>
-      <h2 class="section-title">Lo stile è nei dettagli.</h2>
-    </div>
-    <div class="gallery-grid">
-      <div><img src="https://images.unsplash.com/photo- barber?auto=format&fit=crop&w=1000&q=85" alt="Ambiente barber shop" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1000&q=85'"></div>
-      <div class="gallery-middle">
-        <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=800&q=85" alt="Strumenti da barbiere" loading="lazy">
-        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=800&q=85" alt="Lavoro di precisione" loading="lazy">
-      </div>
-      <div><img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=900&q=85" alt="Taglio professionale" loading="lazy"></div>
-    </div>
+ <div class="wrap">
+  <div class="gallery-head">
+   <div class="kicker">BLACK LABEL</div>
+   <h2 class="display">IL MONDO DEL BARBERING.</h2>
   </div>
+  <div class="gallery-grid">
+   <div><img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=1100&q=85" alt="Strumenti professionali da barbiere" loading="lazy"></div>
+   <div><img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=800&q=85" alt="Taglio dal barbiere" loading="lazy"></div>
+   <div><img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=85" alt="Ambiente barber shop" loading="lazy"></div>
+  </div>
+ </div>
 </section>
 
 <section class="booking" id="prenota">
-  <div class="container booking-layout">
-    <div class="booking-intro">
-      <div class="eyebrow">Il tuo prossimo appuntamento</div>
-      <h2 class="section-title">Il prossimo<br>taglio inizia qui.</h2>
-      <p class="section-copy">Scegli il servizio, seleziona il giorno e l'orario che preferisci. Bastano pochi passaggi per preparare la tua richiesta.</p>
-      <div class="booking-contact">
-        <p><strong>BLACK LABEL BARBER SHOP</strong></p>
-        <p>Via Roma, 00 — Città</p>
-        <p>Telefono: +39 000 000 0000</p>
-        <p>Martedì – Sabato · 09:00 – 19:00</p>
-      </div>
+ <div class="wrap">
+  <div class="booking-heading">
+   <div class="kicker">Prenotazioni</div>
+   <h2 class="display">IL TUO POSTO<br>È QUI.</h2>
+   <p>Scegli il servizio e trova il momento perfetto.</p>
+  </div>
+
+  <div class="booking-box">
+   <div class="booking-left">
+    <div>
+     <div class="kicker">BLACK LABEL</div>
+     <h3 class="display">PRENOTA.<br>CI VEDIAMO<br>IN POLTRONA.</h3>
+     <p>Un appuntamento dedicato a te, al tuo stile e alla cura dei dettagli.</p>
+    </div>
+    <div class="booking-contact">
+     <strong>BLACK LABEL BARBER SHOP</strong><br>
+     Via Roma, 00 · Città<br>
+     Mar – Sab · 09:00 – 19:00
+    </div>
+   </div>
+
+   <form class="booking-form" id="bookingForm">
+    <h3>Il tuo appuntamento</h3>
+
+    <label class="form-label">1. Scegli il servizio</label>
+    <div class="service-options">
+     <button type="button" class="service-option selected" data-service="Taglio uomo" data-price="28">
+      <strong>Taglio uomo</strong><span>€28</span>
+     </button>
+     <button type="button" class="service-option" data-service="Barba" data-price="20">
+      <strong>Barba</strong><span>€20</span>
+     </button>
+     <button type="button" class="service-option" data-service="Taglio + Barba" data-price="42">
+      <strong>Taglio + Barba</strong><span>€42</span>
+     </button>
     </div>
 
-    <div class="booking-card" id="bookingCard">
-      <div class="booking-progress">
-        <div class="progress-line active"></div><div class="progress-line"></div><div class="progress-line"></div>
-      </div>
-      <div id="bookingContent">
-        <div class="step-label" id="stepLabel">PASSAGGIO 01 / 03</div>
-        <h3 id="stepTitle">Scegli il servizio</h3>
-        <div id="stepBody"></div>
-        <div class="booking-error" id="bookingError"></div>
-        <div class="booking-actions">
-          <button class="back-btn" id="backButton" style="visibility:hidden">← Indietro</button>
-          <button class="btn btn-dark" id="nextButton">Continua →</button>
-        </div>
-      </div>
+    <label class="form-label">2. Scegli data e orario</label>
+    <div class="form-row">
+     <div class="field">
+      <label for="date">Data</label>
+      <input type="date" id="date" required>
+     </div>
+     <div class="field">
+      <label for="time">Orario</label>
+      <select id="time" required>
+       <option value="">Seleziona</option>
+       <option>09:00</option><option>10:00</option>
+       <option>11:00</option><option>12:00</option>
+       <option>14:00</option><option>15:00</option>
+       <option>16:00</option><option>17:00</option>
+       <option>18:00</option>
+      </select>
+     </div>
     </div>
+
+    <label class="form-label">3. I tuoi dati</label>
+    <div class="field">
+     <label for="name">Nome e cognome</label>
+     <input type="text" id="name" placeholder="Il tuo nome" required>
+    </div>
+    <div class="field">
+     <label for="phone">Telefono</label>
+     <input type="tel" id="phone" placeholder="Il tuo numero" required>
+    </div>
+
+    <button class="button booking-submit" type="submit">Prepara prenotazione ↗</button>
+    <div class="form-error" id="formError"></div>
+    <p class="booking-note">Questa versione è una demo del sito: per ricevere e confermare prenotazioni reali occorre collegare il modulo a un sistema di gestione.</p>
+   </form>
   </div>
+ </div>
 </section>
 </main>
 
 <footer>
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a class="brand" href="#home">
-          <div class="brand-mark">B</div>
-          <div><div class="brand-name">BLACK LABEL</div><span class="brand-sub">BARBER SHOP</span></div>
-        </a>
-        <p>Il tuo stile merita attenzione. Taglio, barba e cura personale, con precisione e carattere.</p>
-      </div>
-      <div class="footer-links">
-        <div class="footer-column">
-          <h4>Esplora</h4>
-          <a href="#home">Home</a><a href="#servizi">Servizi</a><a href="#esperienza">Il negozio</a><a href="#gallery">Gallery</a>
-        </div>
-        <div class="footer-column">
-          <h4>Contatti</h4>
-          <p>Via Roma, 00 — Città</p><p>+39 000 000 0000</p><p>Mar – Sab · 09:00 – 19:00</p>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 BLACK LABEL BARBER SHOP</span>
-      <span>Concept website by STUDIO WEB</span>
-    </div>
+ <div class="wrap">
+  <div class="footer-main">
+   <div>
+    <div class="footer-logo">BLACK<span>LABEL.</span></div>
+    <p>Il tuo stile. Le tue regole.<br>Ci vediamo in poltrona.</p>
+   </div>
+   <div class="footer-links">
+    <div><h4>Esplora</h4><a href="#home">Home</a><a href="#servizi">Servizi</a><a href="#negozio">Il negozio</a></div>
+    <div><h4>Contatti</h4><p>Via Roma, 00 · Città</p><p>+39 000 000 0000</p><p>Mar – Sab · 09–19</p></div>
+   </div>
   </div>
+  <div class="footer-bottom">
+   <span>© 2026 BLACK LABEL BARBER SHOP</span>
+   <span>Concept website by STUDIO WEB</span>
+  </div>
+ </div>
 </footer>
 
 <script>
-const menuToggle=document.getElementById('menuToggle');
-const navLinks=document.getElementById('navLinks');
-menuToggle.addEventListener('click',()=>navLinks.classList.toggle('open'));
-navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+const menu=document.getElementById('mobileMenu');
+const nav=document.getElementById('navlinks');
+menu.addEventListener('click',()=>nav.classList.toggle('open'));
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
 
-const services=[
- {name:'Taglio uomo',detail:'Consulenza, taglio e styling',price:25,duration:'30 min'},
- {name:'Taglio + Barba',detail:'Il servizio completo',price:35,duration:'50 min'},
- {name:'Barba',detail:'Definizione e rifinitura',price:18,duration:'25 min'},
- {name:'Sfumatura',detail:'Precisione e pulizia delle linee',price:25,duration:'35 min'},
- {name:'Shampoo & Styling',detail:'Detersione e messa in piega',price:15,duration:'20 min'}
-];
+let chosenService='Taglio uomo';
+let chosenPrice=28;
 
-let step=1;
-let selectedService=null;
-let selectedBarber='Primo disponibile';
-let selectedDate='';
-let selectedTime='';
-let customer={name:'',phone:''};
-
-const stepLabel=document.getElementById('stepLabel');
-const stepTitle=document.getElementById('stepTitle');
-const stepBody=document.getElementById('stepBody');
-const errorBox=document.getElementById('bookingError');
-const nextButton=document.getElementById('nextButton');
-const backButton=document.getElementById('backButton');
-const progress=document.querySelectorAll('.progress-line');
-
-function renderStep(){
- errorBox.textContent='';
- progress.forEach((line,i)=>line.classList.toggle('active',i<step));
- stepLabel.textContent=`PASSAGGIO 0${step} / 03`;
- backButton.style.visibility=step===1?'hidden':'visible';
-
- if(step===1){
-  stepTitle.textContent='Scegli il servizio';
-  nextButton.textContent='Continua →';
-  stepBody.innerHTML='<div class="choice-grid">'+services.map((s,i)=>`
-   <button type="button" class="choice ${selectedService===i?'selected':''}" data-service="${i}">
-    <span class="choice-price">€${s.price}</span>
-    <strong>${s.name}</strong><small>${s.duration} · ${s.detail}</small>
-   </button>`).join('')+'</div>';
-  stepBody.querySelectorAll('[data-service]').forEach(btn=>btn.addEventListener('click',()=>{
-   selectedService=Number(btn.dataset.service);renderStep();
-  }));
- }else if(step===2){
-  stepTitle.textContent='Quando vuoi venire?';
-  nextButton.textContent='Continua →';
-  const today=new Date();
-  const minDate=new Date(today.getTime()-today.getTimezoneOffset()*60000).toISOString().split('T')[0];
-  stepBody.innerHTML=`
-   <div class="field"><label>Barbiere</label>
-    <select id="barberSelect"><option>Primo disponibile</option><option>Professionista 1</option><option>Professionista 2</option></select>
-   </div>
-   <div class="field"><label>Data preferita</label><input type="date" id="dateSelect" min="${minDate}" value="${selectedDate}"></div>
-   <div class="field"><label>Orario preferito</label>
-    <div class="time-grid">${['09:00','10:00','11:00','12:00','14:00','15:00','16:00','17:00','18:00'].map(t=>`<button type="button" class="time-choice ${selectedTime===t?'selected':''}" data-time="${t}">${t}</button>`).join('')}</div>
-   </div>`;
-  document.getElementById('barberSelect').value=selectedBarber;
-  document.getElementById('barberSelect').addEventListener('change',e=>selectedBarber=e.target.value);
-  document.getElementById('dateSelect').addEventListener('change',e=>selectedDate=e.target.value);
-  stepBody.querySelectorAll('[data-time]').forEach(btn=>btn.addEventListener('click',()=>{
-   selectedTime=btn.dataset.time;renderStep();
-  }));
- }else{
-  stepTitle.textContent='I tuoi dati';
-  nextButton.textContent='Conferma richiesta →';
-  stepBody.innerHTML=`
-   <div class="field"><label>Nome e cognome</label><input id="customerName" type="text" placeholder="Come ti chiami?" value="${customer.name}"></div>
-   <div class="field"><label>Numero di telefono</label><input id="customerPhone" type="tel" placeholder="+39 ..." value="${customer.phone}"></div>
-   <div class="summary-box" id="summary"></div>`;
-  document.getElementById('summary').innerHTML=`
-   <strong>Riepilogo appuntamento</strong><br>
-   Servizio: ${services[selectedService].name} — €${services[selectedService].price}<br>
-   Barbiere: ${selectedBarber}<br>
-   Data: ${selectedDate.split('-').reverse().join('/')}<br>
-   Orario: ${selectedTime}`;
- }
-}
-
-nextButton.addEventListener('click',()=>{
- errorBox.textContent='';
- if(step===1){
-  if(selectedService===null){errorBox.textContent='Seleziona un servizio per continuare.';return}
-  step=2;renderStep();
- }else if(step===2){
-  if(!selectedDate||!selectedTime){errorBox.textContent='Seleziona una data e un orario.';return}
-  const chosen=new Date(selectedDate+'T00:00:00');
-  const now=new Date();now.setHours(0,0,0,0);
-  if(chosen<now){errorBox.textContent='Seleziona una data valida.';return}
-  step=3;renderStep();
- }else{
-  customer.name=document.getElementById('customerName').value.trim();
-  customer.phone=document.getElementById('customerPhone').value.trim();
-  if(!customer.name||!customer.phone){errorBox.textContent='Inserisci nome e numero di telefono.';return}
-  document.getElementById('bookingContent').innerHTML=`
-   <div class="success-message">
-    <div class="success-icon">✓</div>
-    <div class="eyebrow">Richiesta preparata</div>
-    <h3>Grazie, ${customer.name.split(' ')[0]}.</h3>
-    <p>La tua richiesta per <strong>${services[selectedService].name}</strong> è stata compilata.<br>
-    Data: <strong>${selectedDate.split('-').reverse().join('/')}</strong> alle <strong>${selectedTime}</strong>.<br><br>
-    Questa è una demo: l'appuntamento non è stato inviato né confermato. Per renderlo operativo occorre collegare un sistema di prenotazione.</p>
-   </div>`;
- }
+document.querySelectorAll('.service-option').forEach(button=>{
+ button.addEventListener('click',()=>{
+  document.querySelectorAll('.service-option').forEach(b=>b.classList.remove('selected'));
+  button.classList.add('selected');
+  chosenService=button.dataset.service;
+  chosenPrice=Number(button.dataset.price);
+ });
 });
 
-backButton.addEventListener('click',()=>{
- if(step>1){step--;renderStep()}
+const dateInput=document.getElementById('date');
+const now=new Date();
+const localToday=new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().slice(0,10);
+dateInput.min=localToday;
+
+document.getElementById('bookingForm').addEventListener('submit',function(e){
+ e.preventDefault();
+ const error=document.getElementById('formError');
+ error.textContent='';
+ const chosenDate=new Date(dateInput.value+'T00:00:00');
+ const today=new Date();
+ today.setHours(0,0,0,0);
+
+ if(!dateInput.value||chosenDate<today){
+  error.textContent='Scegli una data valida.';
+  return;
+ }
+ const name=document.getElementById('name').value.trim();
+ const phone=document.getElementById('phone').value.trim();
+ const time=document.getElementById('time').value;
+ if(!name||!phone||!time){
+  error.textContent='Completa tutti i campi richiesti.';
+  return;
+ }
+
+ const dateFormatted=dateInput.value.split('-').reverse().join('/');
+ this.innerHTML=`
+  <div class="confirmation">
+   <div class="kicker">RICHIESTA COMPILATA</div>
+   <h3>GRAZIE, ${name.split(' ')[0].replace(/[<>&"]/g,'')}.</h3>
+   <p>Hai selezionato <strong>${chosenService}</strong> — <strong>€${chosenPrice}</strong>.<br>
+   Data: <strong>${dateFormatted}</strong><br>
+   Orario: <strong>${time}</strong><br><br>
+   Questa è una dimostrazione: la richiesta non è stata inviata e l'appuntamento non è confermato.</p>
+  </div>`;
 });
-renderStep();
 </script>
 </body>
 </html>
